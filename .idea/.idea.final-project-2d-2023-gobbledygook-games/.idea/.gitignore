@@ -4,8 +4,13 @@
 # Rider ignored files
 /projectSettingsUpdater.xml
 /contentModel.xml
+<<<<<<< HEAD
 /.idea.final-project-2d-2023-gobbledygook-games.iml
 /modules.xml
+=======
+/modules.xml
+/.idea.final-project-2d-2023-gobbledygook-games.iml
+>>>>>>> 1d3b4156f15daa5072e99b1bfde88d4771b16222
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
