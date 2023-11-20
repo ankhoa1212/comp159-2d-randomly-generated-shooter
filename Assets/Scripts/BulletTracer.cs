@@ -19,14 +19,14 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
-          /*  Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
             // Apply damage to enemy
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
             }
-          */
+          
             // Destroy the bullet when it hits an object with the "Enemy" tag
             Destroy(gameObject);
             Debug.Log("Enemy Hit!");
