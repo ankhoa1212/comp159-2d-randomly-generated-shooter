@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Rifle : MonoBehaviour
 {
     public Transform shootingPoint;
     public GameObject bulletPrefab;
