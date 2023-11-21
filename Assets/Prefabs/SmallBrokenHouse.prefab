@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1296901843682737312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5310934576569536935}
+  m_Layer: 0
+  m_Name: EntrancePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5310934576569536935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296901843682737312}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8149284099689929484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688746864908545340
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +152,7 @@ Transform:
   - {fileID: 5603785472940403305}
   - {fileID: 5901526037435435668}
   - {fileID: 7326658496273090775}
+  - {fileID: 5310934576569536935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5176973623479944194
@@ -136,6 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   makeTransparent: {fileID: 7651356955180591887}
+  spawnArea: {x: -9, y: -3, z: -5, w: 5}
+  enemy: {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
+  numEnemies: 1
+  entrance: {fileID: 5310934576569536935}
+  offsetFromEntrance: 9
 --- !u!60 &6821536117456785302
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -594,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 6299923854378358226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.40673664, w: 0.9135455}
-  m_LocalPosition: {x: 1.4, y: 1.5, z: 0.1}
+  m_LocalPosition: {x: 1.4, y: 1.5, z: -0.1}
   m_LocalScale: {x: 15, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
