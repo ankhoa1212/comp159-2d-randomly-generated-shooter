@@ -78,7 +78,10 @@ public class RoomController : MonoBehaviour
             makeTransparent.SetActive(false); // show room
             foreach (var obj in objects) // show objects
             {
-                obj.SetActive(true);
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
             }
         }
     }
@@ -90,7 +93,7 @@ public class RoomController : MonoBehaviour
             makeTransparent.SetActive(true); // hide room
             foreach (var obj in objects) // hide objects
             {
-                if (!obj.CompareTag("Enemy")) // hide non-enemy objects
+                if (obj!= null && !obj.CompareTag("Enemy")) // hide non-enemy objects
                 {
                     obj.SetActive(false);
                 }
