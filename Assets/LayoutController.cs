@@ -27,7 +27,7 @@ public class LayoutController : MonoBehaviour
             GenerateStreetLayout();
             if (loop == false)
             {
-                Replace(lastPosition);
+                ReplaceLastStreet();
                 List<GameObject> streetFillers = new List<GameObject>();
                 foreach (var obj in streets)
                 {
@@ -52,17 +52,19 @@ public class LayoutController : MonoBehaviour
     // replace the last street with street filler
     private void ReplaceLastStreet()
     {
-        GameObject replaceLast = null;
-        foreach (var obj in streets)
-        {
-            if (lastPosition == (Vector2)obj.transform.position)
-            {
-                replaceLast = obj;
-            }
-        }
+        GameObject replaceLast = streets[^1];
+        // foreach (var obj in streets)
+        // {
+        //     if (lastPosition == (Vector2)obj.transform.position)
+        //     {
+        //         replaceLast = obj;
+        //     }
+        // }
+        
+        GameObject deadEnd = Instantiate(streetFiller, replaceLast.transform.position, Quaternion.identity);
+        
         streets.Remove(replaceLast);
-        GameObject deadEnd = Instantiate(streetFiller, lastPosition, Quaternion.identity);
-        Destroy(replaceLast);
+        Destroy(replaceLast.gameObject);
         streets.Add(deadEnd);
     }
     // reset last position and last direction
@@ -93,7 +95,7 @@ public class LayoutController : MonoBehaviour
             {
                 for (int x = 0; x < randStreetLength; x++)
                 {
-                    AddNewStreet("Up", ind);
+                    AddNewStreet("Up", ind+x);
                 }
             }
         }
@@ -103,7 +105,7 @@ public class LayoutController : MonoBehaviour
             {
                 for (int x = 0; x < randStreetLength; x++)
                 {
-                    AddNewStreet("Down", ind);
+                    AddNewStreet("Down", ind+x);
                 }
             }
         }
@@ -113,7 +115,7 @@ public class LayoutController : MonoBehaviour
             {
                 for (int x = 0; x < randStreetLength; x++)
                 {
-                    AddNewStreet("Left", ind);
+                    AddNewStreet("Left", ind+x);
                 }
             }
         }
@@ -123,7 +125,7 @@ public class LayoutController : MonoBehaviour
             {
                 for (int x = 0; x < randStreetLength; x++)
                 {
-                    AddNewStreet("Right", ind);
+                    AddNewStreet("Right", ind+x);
                 }
             }
         }
@@ -141,6 +143,7 @@ public class LayoutController : MonoBehaviour
             lastPosition = streets[index].transform.position;
             lastDirection = newDirection;
         }
+        lastPosition = streets[^1].transform.position;
     }
     // add filler street if the street direction changes
     private void AddFiller(string newDirection, int ind)
@@ -149,8 +152,16 @@ public class LayoutController : MonoBehaviour
         {
             if (AddStreet(streetFiller, lastDirection))
             {
-                lastPosition = streets[ind + 1].transform.position;
+                // if (ind + 1 < streets.Count)
+                // {
+                //     lastPosition = streets[ind + 1].transform.position;
+                // }
             }
+            else
+            {
+                // lastPosition = streets[ind + 1].transform.position;
+            }
+            lastPosition = streets[^1].transform.position;
         }
     }
 
@@ -213,6 +224,7 @@ public class LayoutController : MonoBehaviour
     // replace street at position with street filler
     private void Replace(Vector3 nextPosition)
     {
+        Debug.Log($"Replaced at {nextPosition}");
         GameObject newObject = null;
         GameObject oldObject = null;
         foreach (var obj in streets)
@@ -223,8 +235,12 @@ public class LayoutController : MonoBehaviour
                 newObject = Instantiate(streetFiller, nextPosition, Quaternion.identity);
             }
         }
+
+        if (oldObject != null)
+        {
+            streets.Remove(oldObject);
+            Destroy(oldObject);
+        }
         streets.Add(newObject);
-        streets.Remove(oldObject);
-        Destroy(oldObject);
     }
 }
