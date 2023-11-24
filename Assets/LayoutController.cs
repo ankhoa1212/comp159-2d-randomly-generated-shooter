@@ -12,22 +12,99 @@ public class LayoutController : MonoBehaviour
     [SerializeField] private int maxStreetSegments = 100;
     [SerializeField] private int minStreetLength = 1;
     [SerializeField] private int maxStreetLength = 10;
+    [SerializeField] private List<GameObject> possibleRooms;
+    [SerializeField] private GameObject fence;
 
-    private List<GameObject> streets = new List<GameObject>();
-
+    private List<GameObject> rooms = new List<GameObject>();
+    private List<GameObject> streets = new List<GameObject>(); // list of all street parts on screen
     private Vector2 lastPosition; // last position of street object placed
     private string lastDirection; // last direction of street object placed
     private bool loop = true; // to reset generating street layout if a street loop is found
     // Start is called before the first frame update
     void Start()
     {
-        Reset();
+        GenerateStreetLayout();
+        GenerateRooms();
+    }
+
+    private void GenerateRooms()
+    {
+        Vector4 bounds = new Vector4(); // street bounds
+        foreach (var obj in streets)
+        {
+            if (obj.transform.position.x < bounds.x)
+            {
+                bounds.x = obj.transform.position.x;
+            }
+            if (obj.transform.position.x > bounds.y)
+            {
+                bounds.y = obj.transform.position.x;
+            }
+            if (obj.transform.position.y < bounds.z)
+            {
+                bounds.z = obj.transform.position.y;
+            }
+            if (obj.transform.position.y > bounds.w)
+            {
+                bounds.w = obj.transform.position.y;
+            }
+        }
+        float vertOffset = 25;
+        float horizOffset = 50;
+        for (var x = bounds.x; x < bounds.y; x += horizOffset)
+        {
+            int randNum = Random.Range(0, possibleRooms.Count);
+            GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(x, bounds.z - vertOffset, 0), Quaternion.Euler(0,0, 180));
+            rooms.Add(newRoom);
+        }
+        for (var x = bounds.x; x < bounds.y; x += horizOffset)
+        {
+            int randNum = Random.Range(0, possibleRooms.Count);
+            GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(x, bounds.w + vertOffset, 0), Quaternion.identity);
+            rooms.Add(newRoom);
+        }
+        for (var y = bounds.z; y < bounds.w; y += horizOffset)
+        {
+            int randNum = Random.Range(0, possibleRooms.Count);
+            GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(bounds.x - vertOffset, y, 0), Quaternion.Euler(0,0, 90));
+            rooms.Add(newRoom);
+        }
+        for (var y = bounds.z; y < bounds.w; y += horizOffset)
+        {
+            int randNum = Random.Range(0, possibleRooms.Count);
+            GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(bounds.y + vertOffset, y, 0), Quaternion.Euler(0,0, 270));
+            rooms.Add(newRoom);
+        }
+        float fenceOffset = 5f;
+        bounds.x -= 2*vertOffset;
+        bounds.y += 2*vertOffset;
+        bounds.z -= 2*vertOffset;
+        bounds.w += 2*vertOffset;
+        Debug.Log(bounds);
+        for (var x = bounds.x; x < bounds.y; x += fenceOffset)
+        {
+            Instantiate(fence, new Vector3(x, bounds.z, 0), Quaternion.identity);
+            Instantiate(fence, new Vector3(x, bounds.w, 0), Quaternion.identity);
+        }
+        for (var y = bounds.z; y < bounds.w; y += fenceOffset)
+        {
+            Instantiate(fence, new Vector3(bounds.x - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270));
+            Instantiate(fence, new Vector3(bounds.y - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270));
+        }
+    }
+
+    private void GenerateStreetLayout()
+    {
+        StreetSetup();
         while (streets.Count < maxStreetSegments && loop)
         {
-            GenerateStreetLayout();
-            if (loop == false)
+            AddRandomStreet();
+            // loop == false checks if street loop occurs when generating layout
+            if (loop == false) 
             {
+                // replace last street with street filler
                 ReplaceLastStreet();
+                // create list of all street fillers so new street can be added
                 List<GameObject> streetFillers = new List<GameObject>();
                 foreach (var obj in streets)
                 {
@@ -37,130 +114,127 @@ public class LayoutController : MonoBehaviour
                     }
                 }
                 int count = streets.Count;
+                // loop until new street is added
                 while (count == streets.Count)
                 {
-                    int randIndex = Random.Range(0, streetFillers.Count);
+                    int randIndex = Random.Range(0, streetFillers.Count); // get random index of street filler
                     lastPosition = streetFillers[randIndex].transform.position;
                     lastDirection = "Start";
-                    GenerateStreetLayout();
+                    AddRandomStreet();
                 }
-                loop = true;
+                loop = true; // resume loop
             }
         }
         ReplaceLastStreet();
     }
-    // replace the last street with street filler
-    private void ReplaceLastStreet()
-    {
-        GameObject replaceLast = streets[^1];
-        // foreach (var obj in streets)
-        // {
-        //     if (lastPosition == (Vector2)obj.transform.position)
-        //     {
-        //         replaceLast = obj;
-        //     }
-        // }
-        
-        GameObject deadEnd = Instantiate(streetFiller, replaceLast.transform.position, Quaternion.identity);
-        
-        streets.Remove(replaceLast);
-        Destroy(replaceLast.gameObject);
-        streets.Add(deadEnd);
-    }
-    // reset last position and last direction
-    private void Reset()
+    
+    // set up starting values
+    private void StreetSetup()
     {
         lastPosition = transform.position;
         lastDirection = "Start";
         AddStreet(streetFiller, "");
     }
-    // generate a street based on the last direction of the last placed street
-    private void GenerateStreetLayout()
+    
+    // replace the last street with street filler
+    private void ReplaceLastStreet()
     {
-        // int ind = streets.Count - 1;
-        // lastPosition = streets[ind].transform.position;
-        int ind = -1;
-        for (int y = 0; y < streets.Count; y++)
-        {
-            if (lastPosition == (Vector2)streets[y].transform.position)
-            {
-                ind = y;
-            }
-        }
-        int randNum = Random.Range(0, 4);
+        GameObject replaceLast = streets[^1];
+        GameObject deadEnd = Instantiate(streetFiller, replaceLast.transform.position, Quaternion.identity);
+        streets.Remove(replaceLast);
+        Destroy(replaceLast);
+        streets.Add(deadEnd);
+    }
+    
+    // generate a street based on the last direction of the last placed street
+    private void AddRandomStreet()
+    {
+        int randNum = Random.Range(0, 4); // rand num for each direction (up, down, left, right)
         int randStreetLength = Random.Range(minStreetLength, maxStreetLength + 1);
-        if (randNum == 0)
+        switch (randNum)
         {
-            if (lastDirection != "Down")
+            case 0:
             {
-                for (int x = 0; x < randStreetLength; x++)
+                if (lastDirection != "Down")
                 {
-                    AddNewStreet("Up", ind+x);
+                    for (int x = 0; x < randStreetLength; x++)
+                    {
+                        if (!AddNewStreet("Up"))
+                        {
+                            break;
+                        }
+                    }
                 }
+                break;
             }
-        }
-        else if (randNum == 1)
-        {
-            if (lastDirection != "Up")
+            case 1:
             {
-                for (int x = 0; x < randStreetLength; x++)
+                if (lastDirection != "Up")
                 {
-                    AddNewStreet("Down", ind+x);
+                    for (int x = 0; x < randStreetLength; x++)
+                    {
+                        if (!AddNewStreet("Down"))
+                        {
+                            break;
+                        }
+                    }
                 }
+                break;
             }
-        }
-        else if (randNum == 2)
-        {
-            if (lastDirection != "Right")
+            case 2:
             {
-                for (int x = 0; x < randStreetLength; x++)
+                if (lastDirection != "Right")
                 {
-                    AddNewStreet("Left", ind+x);
+                    for (int x = 0; x < randStreetLength; x++)
+                    {
+                        if (!AddNewStreet("Left"))
+                        {
+                            break;
+                        }
+                    }
                 }
+
+                break;
             }
-        }
-        else if (randNum == 3)
-        {
-            if (lastDirection != "Left")
+            case 3:
             {
-                for (int x = 0; x < randStreetLength; x++)
+                if (lastDirection != "Left")
                 {
-                    AddNewStreet("Right", ind+x);
+                    for (int x = 0; x < randStreetLength; x++)
+                    {
+                        if (!AddNewStreet("Right"))
+                        {
+                            break;
+                        }
+                    }
                 }
+                break;
             }
         }
     }
-    // if the street direction changes, add street filler accordingly
-    // add street in new direction
-    // returns the lastDirection of the street
-    private void AddNewStreet(string newDirection, int ind)
+    
+    // if the street direction changes, add street filler and street in new direction
+    // returns true if new street has been added, false if location was already occupied
+    private bool AddNewStreet(string newDirection)
     {
-        AddFiller(newDirection, ind);
+        AddFiller(newDirection);
         if (AddStreet(street, newDirection))
         {
-            // set last position and direction based on the newly placed street
-            int index = streets.Count - 1;
-            lastPosition = streets[index].transform.position;
+            // set last direction and position based on the newly placed street
             lastDirection = newDirection;
+            lastPosition = streets[^1].transform.position;
+            return true;
         }
         lastPosition = streets[^1].transform.position;
+        return false;
     }
+    
     // add filler street if the street direction changes
-    private void AddFiller(string newDirection, int ind)
+    private void AddFiller(string newDirection)
     {
         if (lastDirection != "Start" && newDirection != lastDirection)
         {
-            if (AddStreet(streetFiller, lastDirection))
-            {
-                // if (ind + 1 < streets.Count)
-                // {
-                //     lastPosition = streets[ind + 1].transform.position;
-                // }
-            }
-            else
-            {
-                // lastPosition = streets[ind + 1].transform.position;
-            }
+            AddStreet(streetFiller, lastDirection);
             lastPosition = streets[^1].transform.position;
         }
     }
@@ -170,6 +244,7 @@ public class LayoutController : MonoBehaviour
     {
         
     }
+    
     // add new street object based on direction 
     // return true if successful, false if position already occupied
     private bool AddStreet(GameObject streetType, string direction)
@@ -218,13 +293,12 @@ public class LayoutController : MonoBehaviour
                 return false;
             }
         }
-
         return true;
     }
+    
     // replace street at position with street filler
     private void Replace(Vector3 nextPosition)
     {
-        Debug.Log($"Replaced at {nextPosition}");
         GameObject newObject = null;
         GameObject oldObject = null;
         foreach (var obj in streets)
@@ -235,12 +309,8 @@ public class LayoutController : MonoBehaviour
                 newObject = Instantiate(streetFiller, nextPosition, Quaternion.identity);
             }
         }
-
-        if (oldObject != null)
-        {
-            streets.Remove(oldObject);
-            Destroy(oldObject);
-        }
+        streets.Remove(oldObject);
+        Destroy(oldObject);
         streets.Add(newObject);
     }
 }
