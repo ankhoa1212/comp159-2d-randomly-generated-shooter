@@ -15,7 +15,7 @@ public class LayoutController : MonoBehaviour
     [SerializeField] private List<GameObject> possibleRooms;
     [SerializeField] private GameObject fence;
 
-    private List<GameObject> rooms = new List<GameObject>();
+    private List<GameObject> rooms = new List<GameObject>(); // list of all rooms in the level
     private List<GameObject> streets = new List<GameObject>(); // list of all street parts on screen
     private Vector2 lastPosition; // last position of street object placed
     private string lastDirection; // last direction of street object placed
@@ -80,7 +80,6 @@ public class LayoutController : MonoBehaviour
         bounds.y += 2*vertOffset;
         bounds.z -= 2*vertOffset;
         bounds.w += 2*vertOffset;
-        Debug.Log(bounds);
         for (var x = bounds.x; x < bounds.y; x += fenceOffset)
         {
             Instantiate(fence, new Vector3(x, bounds.z, 0), Quaternion.identity);

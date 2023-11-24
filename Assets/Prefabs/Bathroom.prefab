@@ -101,8 +101,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   makeTransparent: {fileID: 4089411789715645625}
   spawnArea: {x: -1, y: 1, z: -1, w: 0}
-  enemy: {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
+  possibleEnemies:
+  - {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
+  possibleItems:
+  - {fileID: 6375375938339443810, guid: 87aef358de06e8c46a0a686583a1b6c3, type: 3}
   numEnemies: 0
+  numItems: 0
   entrance: {fileID: 6287338588395865209}
   offsetFromEntrance: 1.5
 --- !u!1 &3124060302174037330
