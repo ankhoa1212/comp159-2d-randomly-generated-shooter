@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomController : MonoBehaviour
 {
@@ -20,6 +23,7 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnArea = RotateSpawnArea();
         enemies = new List<GameObject>();
         for (int i = 0; i < numEnemies; i++)
         {
@@ -33,6 +37,54 @@ public class RoomController : MonoBehaviour
             SpawnObject(RandomObjectInList(possibleItems));
         }
         SetActiveInList(false, items);
+    }
+
+    private Vector4 RotateSpawnArea()
+    {
+        Vector3 rotation = transform.rotation.eulerAngles;
+        if (rotation.z == 0)
+        {
+            return spawnArea;
+        }
+        List<Vector3> points = new List<Vector3>();
+        points.Add(new Vector3(spawnArea.x, spawnArea.z, 0)); // minPoint
+        points.Add(new Vector3(spawnArea.y, spawnArea.w, 0)); // maxPoint
+        for (int x = 0; x < points.Count; x++)
+        {
+            points[x] = RotatePoint(points[x], Vector3.zero, rotation.z);
+        }
+        // transform.TransformPoints(points);
+        spawnArea.x = points[1].x;
+        spawnArea.y = points[0].x;
+        if (points[0].x < points[1].x)
+        {
+            spawnArea.x = points[0].x;
+            spawnArea.y = points[1].x;
+        }
+
+        spawnArea.z = points[1].y;
+        spawnArea.w = points[0].y;
+        if (points[0].y < points[1].y)
+        {
+            spawnArea.z = points[0].y;
+            spawnArea.w = points[1].y;
+        }
+        Debug.Log(spawnArea);
+        return spawnArea;
+    }
+    
+    private static Vector3 RotatePoint(Vector3 pointToRotate, Vector3 centerPoint, double angleInDegrees)
+    {
+        double angleInRadians = angleInDegrees * (Math.PI / 180);
+        double cosTheta = Math.Cos(angleInRadians);
+        double sinTheta = Math.Sin(angleInRadians);
+        return new Vector3(
+            (float)(cosTheta * (pointToRotate.x - centerPoint.y) -
+                sinTheta * (pointToRotate.y - centerPoint.y) + centerPoint.x),
+            (float)(sinTheta * (pointToRotate.x - centerPoint.x) +
+                    cosTheta * (pointToRotate.y - centerPoint.y) + centerPoint.y),
+            0f
+            );
     }
 
     // given a list, set all objects in the list to active/not active
