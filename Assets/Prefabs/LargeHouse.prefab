@@ -100,8 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   makeTransparent: {fileID: 6517073118888704207}
   spawnArea: {x: -20, y: 20, z: -10, w: 10}
-  enemy: {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
+  possibleEnemies:
+  - {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
+  possibleItems:
+  - {fileID: 6375375938339443810, guid: 87aef358de06e8c46a0a686583a1b6c3, type: 3}
   numEnemies: 5
+  numItems: 2
   entrance: {fileID: 2333795770604050806}
   offsetFromEntrance: 10
 --- !u!1 &2874214488987519786
@@ -176,7 +180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6603774, g: 0.17236261, b: 0.17236261, a: 1}
   m_FlipX: 0
@@ -390,7 +394,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.3584906, g: 0.12738813, b: 0.12738813, a: 1}
   m_FlipX: 0
