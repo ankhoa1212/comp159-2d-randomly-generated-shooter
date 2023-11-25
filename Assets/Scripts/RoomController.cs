@@ -20,6 +20,7 @@ public class RoomController : MonoBehaviour
     
     private List<GameObject> enemies;
     private List<GameObject> items;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +39,12 @@ public class RoomController : MonoBehaviour
         }
         SetActiveInList(false, items);
     }
-
+    
+    // rotate spawn area
     private Vector4 RotateSpawnArea()
     {
         Vector3 rotation = transform.rotation.eulerAngles;
-        if (rotation.z == 0)
+        if (rotation.z == 0) // spawn area does not need to be rotated
         {
             return spawnArea;
         }
@@ -53,7 +55,7 @@ public class RoomController : MonoBehaviour
         {
             points[x] = RotatePoint(points[x], Vector3.zero, rotation.z);
         }
-        // transform.TransformPoints(points);
+        
         spawnArea.x = points[1].x;
         spawnArea.y = points[0].x;
         if (points[0].x < points[1].x)
@@ -69,10 +71,10 @@ public class RoomController : MonoBehaviour
             spawnArea.z = points[0].y;
             spawnArea.w = points[1].y;
         }
-        Debug.Log(spawnArea);
         return spawnArea;
     }
     
+    // rotate a point around a center point given an angle in degrees
     private static Vector3 RotatePoint(Vector3 pointToRotate, Vector3 centerPoint, double angleInDegrees)
     {
         double angleInRadians = angleInDegrees * (Math.PI / 180);
