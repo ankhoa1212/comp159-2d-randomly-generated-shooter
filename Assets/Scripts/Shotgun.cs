@@ -8,11 +8,21 @@ public class Shotgun : MonoBehaviour
     public GameObject bulletPrefab;
     public int numberOfBullets = 3;
 
+    AudioSource _source;
+    [SerializeField] private AudioClip shotgunShot;
+    
+    void Start()
+    {
+        _source = this.GetComponent<AudioSource>();
+        _source.clip = shotgunShot;
+    }
+    
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            _source.Play();
         }
     }
 
