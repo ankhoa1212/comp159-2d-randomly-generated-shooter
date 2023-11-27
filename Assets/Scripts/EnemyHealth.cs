@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyHealth < 0)
+        if (!IsAlive())
         {
             Die();
         }
@@ -31,4 +31,16 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealth -= damage;
     }
+
+    public bool IsAlive()
+    {
+        if (enemyHealth < 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+    
+    
 }

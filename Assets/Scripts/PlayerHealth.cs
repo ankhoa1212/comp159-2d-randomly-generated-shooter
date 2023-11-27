@@ -11,13 +11,31 @@ public class PlayerHealth : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (!IsAlive())
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    public void Damage(int damage)
+    {
+        playerHealth -= damage;
+    }
+    
+    public bool IsAlive()
+    {
+        if (playerHealth < 0)
+        {
+            return false;
+        }
+
+        return true;
     }
 }
