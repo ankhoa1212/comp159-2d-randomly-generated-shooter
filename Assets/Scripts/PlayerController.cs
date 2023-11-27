@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
             rb.velocity = new Vector2(horizontalInput, verticalInput) * moveSpeed;
-            playerAlive = GetComponent<PlayerHealth>().IsAlive();
+            
+            //playerAlive = GetComponent<PlayerHealth>().IsAlive(); <-- Commented out for now as playerAlive is already set to TRUE in Start()
         }
         /*
         if (horizontalInput < 0 && m_FacingRight)
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         */
     }
 
-    //Function points the ShootingPoint game object in the direction of the crosshair (aka cursor)
+    // Function points the ShootingPoint game object in the direction of the crosshair (aka cursor)
     private void FixedUpdate()
     {
         Vector2 aimDirection = mousePos - rb.position;
@@ -54,7 +55,8 @@ public class PlayerController : MonoBehaviour
         rb.rotation = angle;
     }
 
-    /*
+    /* Flip function commented out due to flipping resulting in the ShootingPoint pointing in the opposite direction of the cursor
+    // TBD if function will be in final product 
     private void Flip()
     {
         m_FacingRight = !m_FacingRight;

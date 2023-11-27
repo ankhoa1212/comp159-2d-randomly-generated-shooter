@@ -3,7 +3,9 @@ guid: c847f66c31d9b4aa9835bbd1a1fc24b8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - zombieInjured: {fileID: 8300000, guid: 499810930e6b95d409d3cdb502112c49, type: 3}
+  - zombieDeath: {fileID: 8300000, guid: ef6bef0cf90f73e4fbeda3b752aa90a7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
