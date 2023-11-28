@@ -35,8 +35,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
+            StartCoroutine(Invincible());
             playerHealth -= damage;
-            StartCoroutine(Invicible());
         }
     }
     
@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
         return true;
     }
 
-    private IEnumerator Invicible()
+    private IEnumerator Invincible()
     {
         int temp = 0;
         isInvincible = true;

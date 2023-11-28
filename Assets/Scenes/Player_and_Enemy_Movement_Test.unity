@@ -665,6 +665,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 5
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
+  numberOfFlashes: 3
+  playerSprite: {fileID: 1808008381}
 --- !u!1 &1909433686
 GameObject:
   m_ObjectHideFlags: 0
