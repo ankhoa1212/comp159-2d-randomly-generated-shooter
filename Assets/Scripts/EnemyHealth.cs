@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int enemyHealth;
+    [SerializeField] private int enemyDamage;
     private AudioSource _sourceZombie;
 
     [SerializeField] private AudioClip zombieInjured;
@@ -49,6 +51,14 @@ public class EnemyHealth : MonoBehaviour
         {
             _sourceZombie.clip = zombieDeath;
             _sourceZombie.Play();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            col.gameObject.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
         }
     }
 
