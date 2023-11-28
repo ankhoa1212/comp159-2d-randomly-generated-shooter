@@ -26,10 +26,15 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
-          
-            // Destroy the bullet when it hits an object with the "Enemy" tag
-            Destroy(gameObject);
-            Debug.Log("Enemy Hit!");
         }
+
+        // Prevents Bullet game objects from destroying themselves when colliding with one another
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            return;
+        }
+        
+        // Destroys Bullet game object when colliding with any game object with a collider and is not tagged an "Enemy"
+        Destroy(gameObject);
     }
 }
