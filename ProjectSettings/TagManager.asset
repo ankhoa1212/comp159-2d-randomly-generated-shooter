@@ -8,6 +8,7 @@ TagManager:
   - Street
   - StreetFiller
   - Bullet
+  - ShotGunBullet
   layers:
   - Default
   - TransparentFX
