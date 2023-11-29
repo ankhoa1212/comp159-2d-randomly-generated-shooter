@@ -19,10 +19,13 @@ public class RoomController : MonoBehaviour
     
     private List<GameObject> enemies;
     private List<GameObject> items;
+
+    private int numNeighbors;
     
     // Start is called before the first frame update
     void Start()
     {
+        numNeighbors = 0;
         spawnArea = RotateSpawnArea();
         enemies = new List<GameObject>();
         for (int i = 0; i < numEnemies; i++)
@@ -131,6 +134,10 @@ public class RoomController : MonoBehaviour
         }
         else
         {
+            if (obj.CompareTag("Neighbor"))
+            {
+                numNeighbors++;
+            }
             items.Add(spawnedObject);
         }
     }
@@ -159,6 +166,12 @@ public class RoomController : MonoBehaviour
             }
         }
         return true;
+    }
+
+    // return the number of neighbors in this room
+    public int GetNumberOfNeighbors()
+    {
+        return numNeighbors;
     }
 
     // show room when player enters
