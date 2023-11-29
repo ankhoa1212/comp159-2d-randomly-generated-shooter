@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 10f;
     public Rigidbody2D rb;
-    public int damage = 10;
+    public int damage;
 
     void Start()
     {
@@ -19,17 +19,22 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
-          /*  Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
             // Apply damage to enemy
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
             }
-          */
-            // Destroy the bullet when it hits an object with the "Enemy" tag
-            Destroy(gameObject);
-            Debug.Log("Enemy Hit!");
         }
+
+        // Prevents Bullet game objects from destroying themselves when colliding with one another
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("ShotGunBullet"))
+        {
+            return;
+        }
+        
+        // Destroys Bullet game object when colliding with any game object with a collider and is not tagged an "Enemy"
+        Destroy(gameObject);
     }
 }

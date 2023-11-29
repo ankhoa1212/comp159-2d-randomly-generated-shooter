@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -16,7 +17,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, 
-            player.transform.position, enemySpeed * Time.deltaTime);
+        if (player != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, 
+                player.transform.position, enemySpeed * Time.deltaTime);
+        }
     }
 }

@@ -25,6 +25,15 @@ public class WeaponSwitcher : MonoBehaviour
         {
             SwitchToRifle();
         }
+
+        if (rifle.activeSelf)
+        {
+            currentWeapon = rifle;
+        }
+        else if (shotgun.activeSelf)
+        {
+            currentWeapon = shotgun;
+        }
     }
 
     void SwitchToRifle()
@@ -37,7 +46,6 @@ public class WeaponSwitcher : MonoBehaviour
         if (rifle != null)
         {
             rifle.SetActive(true); // Activate the rifle
-            currentWeapon = rifle;
         }
         else
         {
@@ -55,7 +63,6 @@ public class WeaponSwitcher : MonoBehaviour
         if (shotgun != null)
         {
             shotgun.SetActive(true); // Activate the shotgun
-            currentWeapon = shotgun;
         }
         else
         {
