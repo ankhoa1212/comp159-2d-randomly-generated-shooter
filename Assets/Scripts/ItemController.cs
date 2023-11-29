@@ -12,7 +12,9 @@ public class ItemController : MonoBehaviour
     {
         Neighbor,
         Gun,
-        Health
+        Health,
+        RifleAmmoBox,
+        shotgunAmmoBox
     }
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,10 @@ public class ItemController : MonoBehaviour
                 break;
             case ItemType.Health:
                 // TODO add health to player
+                break;
+            case ItemType.RifleAmmoBox:
+                break;
+            case ItemType.shotgunAmmoBox:
                 break;
             default:
                 break;
