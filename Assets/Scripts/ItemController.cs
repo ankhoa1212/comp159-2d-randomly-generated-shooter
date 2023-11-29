@@ -15,6 +15,7 @@ public class ItemController : MonoBehaviour
         Health,
         RifleAmmoBox,
         shotgunAmmoBox
+
     }
     // Start is called before the first frame update
     void Start()

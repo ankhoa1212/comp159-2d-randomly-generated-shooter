@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+
     [SerializeField] private GameObject rifleAmmoBoxPrefab;
     [SerializeField] private GameObject shotgunAmmoBoxPrefab;
+
+    public delegate void deadCallback();
+    public deadCallback OnDead;
 
     [SerializeField] private int enemyHealth;
     [SerializeField] private int enemyDamage;
@@ -14,9 +18,6 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private AudioClip zombieInjured;
     [SerializeField] private AudioClip zombieDeath;
-
-    public delegate void deadCallback();
-    public deadCallback OnDead;
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +50,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(ammoBoxPrefab, transform.position, Quaternion.identity);
         }
-
-        // Notify other systems that the enemy has died
-        
-
         // Destroy the enemy GameObject
         Destroy(gameObject);
         OnDead();
@@ -108,7 +105,21 @@ public class EnemyHealth : MonoBehaviour
                 return shotgunAmmoBoxPrefab;
             }
         }
-
         return null; 
+        Destroy(gameObject);
     }
+
+
+
+    /*
+    public bool IsAlive()
+    {
+        if (enemyHealth <= 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+    */
 }
