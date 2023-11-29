@@ -25,8 +25,9 @@ public class LayoutController : MonoBehaviour
     {
         GenerateStreetLayout();
         GenerateRooms();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().StartLevel();
     }
-
+    
     private void GenerateRooms()
     {
         Vector4 bounds = new Vector4(); // street bounds
@@ -49,6 +50,7 @@ public class LayoutController : MonoBehaviour
                 bounds.w = obj.transform.position.y;
             }
         }
+        // generate rooms
         float vertOffset = 25;
         float horizOffset = 50;
         for (var x = bounds.x; x < bounds.y; x += horizOffset)
@@ -75,6 +77,7 @@ public class LayoutController : MonoBehaviour
             GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(bounds.y + vertOffset, y, 0), Quaternion.Euler(0,0, 270));
             rooms.Add(newRoom);
         }
+        // generate fence
         float fenceOffset = 5f;
         bounds.x -= 2*vertOffset;
         bounds.y += 2*vertOffset;
