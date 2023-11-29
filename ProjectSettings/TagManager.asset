@@ -8,6 +8,8 @@ TagManager:
   - Street
   - StreetFiller
   - Bullet
+  - Neighbor
+  - Room
   layers:
   - Default
   - TransparentFX
