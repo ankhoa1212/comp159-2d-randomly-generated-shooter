@@ -1279,6 +1279,7 @@ MonoBehaviour:
   numberOfFlashes: 3
   playerSprite: {fileID: 1808008381}
   playerPain: {fileID: 8300000, guid: c1feb930e9a198141948639334a05005, type: 3}
+  playerHealthIncrease: {fileID: 8300000, guid: 78f9081f901d5b1478a819648ee8fd07, type: 3}
 --- !u!82 &1808008387
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1771,6 +1772,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e37e353bc67b4a3d865d713cf239807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &8473676484661791129
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.646
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830792967449787594, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470792593001976521, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
+      propertyPath: m_Name
+      value: HealthPack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1782,3 +1840,4 @@ SceneRoots:
   - {fileID: 1671403310}
   - {fileID: 1066815229}
   - {fileID: 1111846564}
+  - {fileID: 8473676484661791129}
