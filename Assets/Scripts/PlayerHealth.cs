@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     //[SerializeField] private Collider2D triggerCollider;
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private AudioClip playerPain;
+    [SerializeField] private AudioClip playerHealthIncrease;
     
     private AudioSource _audioSource;
     private int currentPlayerHealth;
@@ -81,5 +82,15 @@ public class PlayerHealth : MonoBehaviour
     public int getMaxPlayerHealth()
     {
         return maxPlayerHealth;
+    }
+
+    public void IncreasePlayerHealth()
+    {
+        if (getPlayerHealth() < getMaxPlayerHealth())
+        {
+            currentPlayerHealth++;
+            _audioSource.PlayOneShot(playerHealthIncrease);
+        }
+
     }
 }
