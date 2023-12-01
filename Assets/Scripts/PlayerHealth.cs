@@ -13,6 +13,10 @@ public class PlayerHealth : MonoBehaviour
     //[SerializeField] private Collider2D triggerCollider;
     [SerializeField] private SpriteRenderer playerSprite;
 
+    [SerializeField] private AudioClip playerPain;
+    [SerializeField] private AudioClip playerHealthIncrease;
+    
+    private AudioSource _audioSource;
     private int currentPlayerHealth;
     private bool isInvincible;
     // Start is called before the first frame update
@@ -21,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         isInvincible = false;
 
         currentPlayerHealth = maxPlayerHealth;
+        _audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -44,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
             playerHealth -= damage;
             currentPlayerHealth -= damage;
+            _audioSource.PlayOneShot(playerPain);
         }
     }
     
@@ -84,4 +90,13 @@ public class PlayerHealth : MonoBehaviour
         return maxPlayerHealth;
     }
 
+    public void IncreasePlayerHealth()
+    {
+        if (getPlayerHealth() < getMaxPlayerHealth())
+        {
+            currentPlayerHealth++;
+            _audioSource.PlayOneShot(playerHealthIncrease);
+        }
+
+    }
 }

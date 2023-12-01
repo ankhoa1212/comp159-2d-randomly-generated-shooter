@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 8d684eb2bc97b3f4e90c767bed4fe930
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884d6e621e86c1c4e99f8ec05f69bcc8
+      internalID: -1205096166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35380b009f197bb439e4585357c177aa
+      internalID: 962373844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af7433b376116f4a9f5692a8f83aad5
+      internalID: 1140650009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55669b6c7a04fa24288e77334c773284
+      internalID: 424765576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_4
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63182bc0a533fb247bb8e6fe5a875d78
+      internalID: 1473271266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_5
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 162
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e028f1f5a331844bb09a0ccdc24304b
+      internalID: 1577132224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66391938030e7034284978a7eb31b48e
+      internalID: -372373878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aba1cc2abb9e45488c99e4a51645257
+      internalID: -428383662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4b29ee48b6ee5459a2cb205113d7df
+      internalID: -1790188636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_9
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25554f8ac2970a5419206af3874f5021
+      internalID: 80064939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_10
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5ec31b9d111884da86d4902547e58c
+      internalID: -1147469471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_11
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b000871b90737324f85437c935080aaa
+      internalID: 856405278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db64b59b2d6c194db176a94a8d8a3d3
+      internalID: 1410879127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd22f0782a4f6804ea47facbb47b2c16
+      internalID: 1237957107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_14
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cee44b0f0a9d3b448bd93b975c6bb81
+      internalID: 589361681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_15
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ad22c42b4db764987e9c3dc634588e
+      internalID: 1365914754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab49bd7661ecbe34b99cd6a04faf81a8
+      internalID: -1172014281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_17
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0520a94fb0c9214f91222781813268d
+      internalID: 1757969273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 78
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4787382cb5c15034286cc22f554c8e6f
+      internalID: 1326589736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 78
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010add12a6c486046b512191a1316abe
+      internalID: 25534446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_20
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 78
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae0b02096407af44b45bb0d898e76b9
+      internalID: 628859614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_21
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 78
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf893b37500e764f8f1b9990ac8f7a5
+      internalID: 701815009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 50
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665a876f47c2c674bb786e2389587ac9
+      internalID: 1224688909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_23
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 50
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3670553f13b35643aac9a98e788d8db
+      internalID: 57248119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 22
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f26c7e46262bf46869f1a2182658b4
+      internalID: -1287532646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Items & Weapons_25
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 22
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a95be9c938093499f59a730b1147b9
+      internalID: -929566871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SNES - Zombies Ate My Neighbors - Items & Weapons_0: -1205096166
+      SNES - Zombies Ate My Neighbors - Items & Weapons_1: 962373844
+      SNES - Zombies Ate My Neighbors - Items & Weapons_10: -1147469471
+      SNES - Zombies Ate My Neighbors - Items & Weapons_11: 856405278
+      SNES - Zombies Ate My Neighbors - Items & Weapons_12: 1410879127
+      SNES - Zombies Ate My Neighbors - Items & Weapons_13: 1237957107
+      SNES - Zombies Ate My Neighbors - Items & Weapons_14: 589361681
+      SNES - Zombies Ate My Neighbors - Items & Weapons_15: 1365914754
+      SNES - Zombies Ate My Neighbors - Items & Weapons_16: -1172014281
+      SNES - Zombies Ate My Neighbors - Items & Weapons_17: 1757969273
+      SNES - Zombies Ate My Neighbors - Items & Weapons_18: 1326589736
+      SNES - Zombies Ate My Neighbors - Items & Weapons_19: 25534446
+      SNES - Zombies Ate My Neighbors - Items & Weapons_2: 1140650009
+      SNES - Zombies Ate My Neighbors - Items & Weapons_20: 628859614
+      SNES - Zombies Ate My Neighbors - Items & Weapons_21: 701815009
+      SNES - Zombies Ate My Neighbors - Items & Weapons_22: 1224688909
+      SNES - Zombies Ate My Neighbors - Items & Weapons_23: 57248119
+      SNES - Zombies Ate My Neighbors - Items & Weapons_24: -1287532646
+      SNES - Zombies Ate My Neighbors - Items & Weapons_25: -929566871
+      SNES - Zombies Ate My Neighbors - Items & Weapons_26: 529109700
+      SNES - Zombies Ate My Neighbors - Items & Weapons_27: -1356001966
+      SNES - Zombies Ate My Neighbors - Items & Weapons_28: -362040234
+      SNES - Zombies Ate My Neighbors - Items & Weapons_3: 424765576
+      SNES - Zombies Ate My Neighbors - Items & Weapons_4: 1473271266
+      SNES - Zombies Ate My Neighbors - Items & Weapons_5: 1577132224
+      SNES - Zombies Ate My Neighbors - Items & Weapons_6: -372373878
+      SNES - Zombies Ate My Neighbors - Items & Weapons_7: -428383662
+      SNES - Zombies Ate My Neighbors - Items & Weapons_8: -1790188636
+      SNES - Zombies Ate My Neighbors - Items & Weapons_9: 80064939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

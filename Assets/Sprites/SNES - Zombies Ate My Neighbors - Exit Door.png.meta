@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 356c373729e3d064e9eeaa5e7c17d9cc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 50
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ccb92e4a22b5f4da21c7ed3636bf21
+      internalID: -1238235188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 45
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f78b38a518ab4241bae4653a7ed853f
+      internalID: 472640661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 32
+        width: 7
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d79484cfa25d34e81dca4d830f9b8d
+      internalID: 625049776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 32
+        width: 15
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176b567f795a2244fbfe4eba24b4c607
+      internalID: -1469306949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 32
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e9d36887271ab4e8f0d8409e0011f0
+      internalID: -1350780915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 32
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81892910cca23914a80c1601e7197751
+      internalID: -1250368664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 32
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48db6fb67eca414bb4342f666ba96a7
+      internalID: -1243155730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Zombies Ate My Neighbors - Exit Door_7
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 32
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424392f4f5f55c943bb9dc26739ff85a
+      internalID: 448189499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SNES - Zombies Ate My Neighbors - Exit Door_0: -1238235188
+      SNES - Zombies Ate My Neighbors - Exit Door_1: 472640661
+      SNES - Zombies Ate My Neighbors - Exit Door_10: -232381346
+      SNES - Zombies Ate My Neighbors - Exit Door_11: 1208354675
+      SNES - Zombies Ate My Neighbors - Exit Door_12: -985739949
+      SNES - Zombies Ate My Neighbors - Exit Door_13: -418782097
+      SNES - Zombies Ate My Neighbors - Exit Door_14: 804557065
+      SNES - Zombies Ate My Neighbors - Exit Door_15: 557781520
+      SNES - Zombies Ate My Neighbors - Exit Door_16: 112735753
+      SNES - Zombies Ate My Neighbors - Exit Door_17: -367820263
+      SNES - Zombies Ate My Neighbors - Exit Door_18: -859726282
+      SNES - Zombies Ate My Neighbors - Exit Door_19: -732850086
+      SNES - Zombies Ate My Neighbors - Exit Door_2: 625049776
+      SNES - Zombies Ate My Neighbors - Exit Door_20: -87035066
+      SNES - Zombies Ate My Neighbors - Exit Door_21: 1146434678
+      SNES - Zombies Ate My Neighbors - Exit Door_22: -2029413174
+      SNES - Zombies Ate My Neighbors - Exit Door_23: -291682057
+      SNES - Zombies Ate My Neighbors - Exit Door_24: -180860661
+      SNES - Zombies Ate My Neighbors - Exit Door_25: -1027518648
+      SNES - Zombies Ate My Neighbors - Exit Door_26: 60126157
+      SNES - Zombies Ate My Neighbors - Exit Door_27: 687078286
+      SNES - Zombies Ate My Neighbors - Exit Door_28: -294987126
+      SNES - Zombies Ate My Neighbors - Exit Door_29: 1064713904
+      SNES - Zombies Ate My Neighbors - Exit Door_3: -1469306949
+      SNES - Zombies Ate My Neighbors - Exit Door_30: 1823173687
+      SNES - Zombies Ate My Neighbors - Exit Door_31: 1097509302
+      SNES - Zombies Ate My Neighbors - Exit Door_32: 202451337
+      SNES - Zombies Ate My Neighbors - Exit Door_33: -1439956118
+      SNES - Zombies Ate My Neighbors - Exit Door_34: 346899427
+      SNES - Zombies Ate My Neighbors - Exit Door_35: -1875629397
+      SNES - Zombies Ate My Neighbors - Exit Door_36: 2090464017
+      SNES - Zombies Ate My Neighbors - Exit Door_37: -578648549
+      SNES - Zombies Ate My Neighbors - Exit Door_38: -1539388178
+      SNES - Zombies Ate My Neighbors - Exit Door_39: -1355358629
+      SNES - Zombies Ate My Neighbors - Exit Door_4: -1350780915
+      SNES - Zombies Ate My Neighbors - Exit Door_40: 593324425
+      SNES - Zombies Ate My Neighbors - Exit Door_41: 439761218
+      SNES - Zombies Ate My Neighbors - Exit Door_42: -1332941684
+      SNES - Zombies Ate My Neighbors - Exit Door_43: -2034534110
+      SNES - Zombies Ate My Neighbors - Exit Door_44: 1972327416
+      SNES - Zombies Ate My Neighbors - Exit Door_45: 1048212829
+      SNES - Zombies Ate My Neighbors - Exit Door_46: 1159815864
+      SNES - Zombies Ate My Neighbors - Exit Door_47: 1175664210
+      SNES - Zombies Ate My Neighbors - Exit Door_48: -514829901
+      SNES - Zombies Ate My Neighbors - Exit Door_49: -1703548145
+      SNES - Zombies Ate My Neighbors - Exit Door_5: -1250368664
+      SNES - Zombies Ate My Neighbors - Exit Door_50: -678350618
+      SNES - Zombies Ate My Neighbors - Exit Door_51: -1911681917
+      SNES - Zombies Ate My Neighbors - Exit Door_52: -1017997682
+      SNES - Zombies Ate My Neighbors - Exit Door_53: -648790695
+      SNES - Zombies Ate My Neighbors - Exit Door_54: -1489721579
+      SNES - Zombies Ate My Neighbors - Exit Door_55: 1418405153
+      SNES - Zombies Ate My Neighbors - Exit Door_56: -2055248181
+      SNES - Zombies Ate My Neighbors - Exit Door_57: 341661868
+      SNES - Zombies Ate My Neighbors - Exit Door_6: -1243155730
+      SNES - Zombies Ate My Neighbors - Exit Door_7: 448189499
+      SNES - Zombies Ate My Neighbors - Exit Door_8: 166882545
+      SNES - Zombies Ate My Neighbors - Exit Door_9: -1781421070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
