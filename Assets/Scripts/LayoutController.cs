@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,22 +10,25 @@ public class LayoutController : MonoBehaviour
 {
     [SerializeField] private GameObject street;
     [SerializeField] private GameObject streetFiller;
-    [SerializeField] private int maxStreetSegments = 100;
-    [SerializeField] private int minStreetLength = 1;
-    [SerializeField] private int maxStreetLength = 10;
+    [SerializeField] private int maxStreetSegments = 25;
+    [SerializeField] private int minStreetLength = 3;
+    [SerializeField] private int maxStreetLength = 5;
+    [SerializeField] private float vertOffset = 25f;
+    [SerializeField] private float horizOffset = 50f;
+    [SerializeField] private float outerFenceOffset = 50f;
     [SerializeField] private List<GameObject> possibleRooms;
     [SerializeField] private GameObject fence;
 
     private List<GameObject> rooms = new List<GameObject>(); // list of all rooms in the level
-    private List<GameObject> streets = new List<GameObject>(); // list of all street parts on screen
+    private List<GameObject> streets = new List<GameObject>(); // list of all street parts in the level
+    private List<GameObject> fences = new List<GameObject>(); // list of all fences in the level
     private Vector2 lastPosition; // last position of street object placed
     private string lastDirection; // last direction of street object placed
     private bool loop = true; // to reset generating street layout if a street loop is found
     // Start is called before the first frame update
     void Start()
     {
-        GenerateStreetLayout();
-        GenerateRooms();
+        GenerateLevelLayout();
     }
 
     private void GenerateRooms()
@@ -49,8 +53,7 @@ public class LayoutController : MonoBehaviour
                 bounds.w = obj.transform.position.y;
             }
         }
-        float vertOffset = 25;
-        float horizOffset = 50;
+        // generate rooms
         for (var x = bounds.x; x < bounds.y; x += horizOffset)
         {
             int randNum = Random.Range(0, possibleRooms.Count);
@@ -75,20 +78,21 @@ public class LayoutController : MonoBehaviour
             GameObject newRoom = Instantiate(possibleRooms[randNum], new Vector3(bounds.y + vertOffset, y, 0), Quaternion.Euler(0,0, 270));
             rooms.Add(newRoom);
         }
+        // generate fence
         float fenceOffset = 5f;
-        bounds.x -= 2*vertOffset;
-        bounds.y += 2*vertOffset;
-        bounds.z -= 2*vertOffset;
-        bounds.w += 2*vertOffset;
+        bounds.x -= outerFenceOffset;
+        bounds.y += outerFenceOffset;
+        bounds.z -= outerFenceOffset;
+        bounds.w += outerFenceOffset;
         for (var x = bounds.x; x < bounds.y; x += fenceOffset)
         {
-            Instantiate(fence, new Vector3(x, bounds.z, 0), Quaternion.identity);
-            Instantiate(fence, new Vector3(x, bounds.w, 0), Quaternion.identity);
+            fences.Add(Instantiate(fence, new Vector3(x, bounds.z, 0), Quaternion.identity));
+            fences.Add(Instantiate(fence, new Vector3(x, bounds.w, 0), Quaternion.identity));
         }
         for (var y = bounds.z; y < bounds.w; y += fenceOffset)
         {
-            Instantiate(fence, new Vector3(bounds.x - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270));
-            Instantiate(fence, new Vector3(bounds.y - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270));
+            fences.Add(Instantiate(fence, new Vector3(bounds.x - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270)));
+            fences.Add(Instantiate(fence, new Vector3(bounds.y - fenceOffset*2/5, y + fenceOffset/2, 0), Quaternion.Euler(0, 0, 270)));
         }
     }
 
@@ -311,5 +315,57 @@ public class LayoutController : MonoBehaviour
         streets.Remove(oldObject);
         Destroy(oldObject);
         streets.Add(newObject);
+    }
+    
+    // clear each item in list
+    private List<GameObject> ClearList(List<GameObject> objects)
+    {
+        foreach (var obj in objects)
+        {
+            Destroy(obj);
+        }
+        return new List<GameObject>();
+    }
+    
+    // clear all objects in level
+    public void ClearLevelLayout()
+    {
+        streets = ClearList(streets);
+        rooms = ClearList(rooms);
+        fences = ClearList(fences);
+        // var levelCleared = false;
+        // while (!levelCleared)
+        // {
+        //     var roomTest = GameObject.FindGameObjectWithTag("Room");
+        //     var streetTest = GameObject.FindGameObjectWithTag("Street");
+        //     var streetFillerTest = GameObject.FindGameObjectWithTag("StreetFiller");
+        //     var fenceTest = GameObject.FindGameObjectWithTag("Fence");
+        //     if (roomTest == null && streetTest == null && streetFillerTest == null && fenceTest == null)
+        //     {
+        //         levelCleared = true;
+        //     }
+        // }
+    }
+    
+    // generate all objects in level
+    public void GenerateLevelLayout()
+    {
+        GenerateStreetLayout();
+        GenerateRooms();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().StartLevel();
+    }
+    
+    //set max street segments, min street length, max street length
+    public void SetStreetSizes(int3 streetValues)
+    {
+        maxStreetSegments = streetValues[0];
+        minStreetLength = streetValues[1];
+        maxStreetLength = streetValues[2];
+    }
+    
+    //get max street segments, min street length, max street length
+    public int3 GetStreetSizes()
+    {
+        return new int3(maxStreetSegments, minStreetLength, maxStreetLength);
     }
 }
