@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1365922512}
-  bulletPrefab: {fileID: 7483238868408495898, guid: c09297c59f152264699f1b1f00ea21f9, type: 3}
+  bulletPrefab: {fileID: 8949947558051504341, guid: 6e082d027d862034f8f810ebcaf437da, type: 3}
   numberOfBullets: 3
   shotgunShot: {fileID: 8300000, guid: 16c490ef15e8c044c9fd7a0a53f385d2, type: 3}
 --- !u!4 &1909433688

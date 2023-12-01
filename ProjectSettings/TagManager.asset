@@ -3,6 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+
+
   tags:
   - Enemy
   - Street
@@ -10,6 +12,7 @@ TagManager:
   - Bullet
   - Neighbor
   - Room
+
   layers:
   - Default
   - TransparentFX
