@@ -40,7 +40,7 @@ public class ItemController : MonoBehaviour
                 // TODO add new gun type to player
                 break;
             case ItemType.Health:
-                // TODO add health to player
+                HealPlayer(other.gameObject);
                 break;
             case ItemType.Door:
                 
@@ -50,5 +50,15 @@ public class ItemController : MonoBehaviour
                 break;
         }
         Destroy(gameObject);
+    }
+
+    // Function heals player when colliding with health pack and player health is less player max health
+    private void HealPlayer(GameObject player)
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth.getPlayerHealth() < playerHealth.getMaxPlayerHealth())
+        {
+            playerHealth.IncreasePlayerHealth();
+        }
     }
 }
