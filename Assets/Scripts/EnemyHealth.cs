@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
         }
         // Destroy the enemy GameObject
         Destroy(gameObject);
-        OnDead();
+        //OnDead();
     }
 
     public void TakeDamage(int damage)
