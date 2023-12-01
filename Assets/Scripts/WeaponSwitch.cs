@@ -6,79 +6,53 @@ using UnityEngine.UI;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    public GameObject rifle;
-    public GameObject shotgun;
-
-    public GameObject currentWeapon;
-
+    private int currentWeaponIndex;
+    [SerializeField] private List<GameObject> weapons;
+    [SerializeField] private List<Sprite> weaponImage;
     [SerializeField] private Image weaponBoxImage;
-    [SerializeField] private Sprite rifleImg;
-    [SerializeField] private Sprite shotgunImg;
     void Start()
     {
-        //weaponBoxImage = currentWeapon.GetComponent<Image>();
-        // Set the initial weapon
-        SwitchToRifle();
+        // Set the initial weapon index
+        currentWeaponIndex = 0;
     }
 
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
-            SwitchToShotgun();
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            SwitchToRifle();
-        }
+        // switch weapon based on scroll wheel value
+        SwitchWeapon(Input.GetAxis("Mouse ScrollWheel"));
     }
 
-    void SwitchToRifle()
+    // switch weapon based on direction scrolled
+    private void SwitchWeapon(float scrollValue)
     {
-        if (shotgun != null)
+        if (scrollValue != 0f)
         {
-            shotgun.SetActive(false); // Deactivate the shotgun
-        }
-
-        if (rifle != null)
-        {
-            rifle.SetActive(true); // Activate the rifle
-            currentWeapon = rifle;
-            
-            // Switches the weapon box image to the rifle
-            if (weaponBoxImage != null)
+            if (scrollValue > 0f)
             {
-                weaponBoxImage.sprite = rifleImg;
+                currentWeaponIndex = Mathf.Clamp(currentWeaponIndex + 1, 0, weapons.Count - 1); // increase weapon index
             }
-
+            else
+            {
+                currentWeaponIndex = Mathf.Clamp(currentWeaponIndex - 1, 0, weapons.Count - 1); // decrease weapon index
+            }
         }
-        else
-        {
-            Debug.LogWarning("Rifle not assigned in the inspector!");
-        }
+        ActivateWeapon(currentWeaponIndex);
     }
 
-    void SwitchToShotgun()
+    // activate weapon and set weapon image based on index, deactivate all other weapons
+    private void ActivateWeapon(int index)
     {
-        if (rifle != null)
+        for (var x = 0; x < weapons.Count; x++)
         {
-            rifle.SetActive(false); // Deactivate the rifle
-        }
-
-        if (shotgun != null)
-        {
-            shotgun.SetActive(true); // Activate the shotgun
-            currentWeapon = shotgun;
-            
-            // Switches the weapon box image to the shotgun
-            if (weaponBoxImage != null)
+            if (x == index)
             {
-                weaponBoxImage.sprite = shotgunImg;
+                weapons[x].SetActive(true);
+                weaponBoxImage.sprite = weaponImage[x]; // set weapon box image sprite
             }
-        }
-        else
-        {
-            Debug.LogWarning("Shotgun not assigned in the inspector!");
+            else
+            {
+                weapons[x].SetActive(false);
+            }
         }
     }
 }

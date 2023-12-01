@@ -397,7 +397,6 @@ GameObject:
   - component: {fileID: 333456003}
   - component: {fileID: 333456005}
   - component: {fileID: 333456004}
-  - component: {fileID: 333456006}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -463,24 +462,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333456002}
   m_CullTransparentMesh: 1
---- !u!114 &333456006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333456002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
-  weaponBoxImage: {fileID: 333456004}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
 --- !u!1 &340549804
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +557,6 @@ GameObject:
   - component: {fileID: 784059231}
   - component: {fileID: 784059233}
   - component: {fileID: 784059232}
-  - component: {fileID: 784059234}
   m_Layer: 5
   m_Name: WeaponBoxPanel
   m_TagString: Untagged
@@ -641,24 +621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784059230}
   m_CullTransparentMesh: 1
---- !u!114 &784059234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784059230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
-  weaponBoxImage: {fileID: 784059232}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
 --- !u!1 &1066815226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,12 +1057,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
-  weaponBoxImage: {fileID: 0}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
+  weapons:
+  - {fileID: 86379398}
+  - {fileID: 1909433686}
+  weaponImage:
+  - {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
+  - {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
+  weaponBoxImage: {fileID: 784059232}
 --- !u!1 &1671403306
 GameObject:
   m_ObjectHideFlags: 0
