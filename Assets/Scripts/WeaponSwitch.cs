@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitcher : MonoBehaviour
 {
@@ -9,8 +11,12 @@ public class WeaponSwitcher : MonoBehaviour
 
     public GameObject currentWeapon;
 
+    [SerializeField] private Image weaponBoxImage;
+    [SerializeField] private Sprite rifleImg;
+    [SerializeField] private Sprite shotgunImg;
     void Start()
     {
+        //weaponBoxImage = currentWeapon.GetComponent<Image>();
         // Set the initial weapon
         SwitchToRifle();
     }
@@ -38,6 +44,13 @@ public class WeaponSwitcher : MonoBehaviour
         {
             rifle.SetActive(true); // Activate the rifle
             currentWeapon = rifle;
+            
+            // Switches the weapon box image to the rifle
+            if (weaponBoxImage != null)
+            {
+                weaponBoxImage.sprite = rifleImg;
+            }
+
         }
         else
         {
@@ -56,6 +69,12 @@ public class WeaponSwitcher : MonoBehaviour
         {
             shotgun.SetActive(true); // Activate the shotgun
             currentWeapon = shotgun;
+            
+            // Switches the weapon box image to the shotgun
+            if (weaponBoxImage != null)
+            {
+                weaponBoxImage.sprite = shotgunImg;
+            }
         }
         else
         {
