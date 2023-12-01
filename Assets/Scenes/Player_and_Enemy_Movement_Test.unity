@@ -423,7 +423,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &333456002
@@ -568,7 +568,7 @@ SpriteRenderer:
   m_Size: {x: 0.21, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &340549806
@@ -869,7 +869,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1348924050
@@ -938,7 +938,7 @@ SpriteRenderer:
   m_Size: {x: 0.625, y: 0.33333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1348924052
@@ -1301,6 +1301,7 @@ GameObject:
   - component: {fileID: 1694173196}
   - component: {fileID: 1694173195}
   - component: {fileID: 1694173197}
+  - component: {fileID: 1694173198}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1362,6 +1363,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 6088605408696237007, guid: 14a10fa95d48415418d9e48ed0e80783, type: 3}
+--- !u!114 &1694173198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694173194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6605644492d484d9079fe64b3b46e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808008380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154b8d37a54b3456baa35567700c4bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 0
   maxPlayerHealth: 10
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1678,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1365922512}
-  bulletPrefab: {fileID: 8949947558051504341, guid: 6e082d027d862034f8f810ebcaf437da, type: 3}
+  ShotgunPrefab: {fileID: 0}
   numberOfBullets: 3
   shotgunShot: {fileID: 8300000, guid: 16c490ef15e8c044c9fd7a0a53f385d2, type: 3}
 --- !u!4 &1909433688
