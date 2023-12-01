@@ -423,7 +423,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &333456002
@@ -568,7 +568,7 @@ SpriteRenderer:
   m_Size: {x: 0.21, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &340549806
@@ -869,7 +869,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1348924050
@@ -938,7 +938,7 @@ SpriteRenderer:
   m_Size: {x: 0.625, y: 0.33333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1348924052
@@ -1692,11 +1692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1365922512}
-
   ShotgunPrefab: {fileID: 8949947558051504341, guid: 6e082d027d862034f8f810ebcaf437da, type: 3}
-
   numberOfBullets: 3
-  shotgunShot: {fileID: 8300000, guid: 16c490ef15e8c044c9fd7a0a53f385d2, type: 3}
+  shotgunShot: {fileID: 0}
 --- !u!4 &1909433688
 Transform:
   m_ObjectHideFlags: 0
