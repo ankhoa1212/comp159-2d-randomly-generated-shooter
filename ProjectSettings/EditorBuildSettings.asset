@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Player_and_Enemy_Movement_Test.unity
     guid: 71b046b57ccf69b4b9cda3c7b392db4b
+  - enabled: 1
+    path: Assets/Scenes/Game_Over.unity
+    guid: d1e480faf9bae42d098698b5005438af
   m_configObjects: {}
