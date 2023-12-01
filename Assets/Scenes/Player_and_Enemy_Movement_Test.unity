@@ -1068,9 +1068,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   street: {fileID: 6018542143765082437, guid: 006f1ed571f23644788d9ee370af1365, type: 3}
   streetFiller: {fileID: 269259993711518993, guid: 89ee9344dff926a4aa4d0856cfb4a4dd, type: 3}
-  maxStreetSegments: 25
+  maxStreetSegments: 5
   minStreetLength: 3
   maxStreetLength: 5
+  vertOffset: 25
+  horizOffset: 50
+  outerFenceOffset: 50
   possibleRooms:
   - {fileID: 1689897557584189649, guid: 4aaaf629aaec9574ebdadb34889699a3, type: 3}
   - {fileID: 4975034393580910281, guid: c470ac14092202f469b5274b2b0ccfdc, type: 3}
@@ -1104,6 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e0159b42716df41b72283f7cb7ff6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 6088605408696237007, guid: 14a10fa95d48415418d9e48ed0e80783, type: 3}
 --- !u!1 &1808008380
 GameObject:
   m_ObjectHideFlags: 0

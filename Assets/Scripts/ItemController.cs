@@ -12,7 +12,8 @@ public class ItemController : MonoBehaviour
     {
         Neighbor,
         Gun,
-        Health
+        Health,
+        Door
     }
     // Start is called before the first frame update
     void Start()
@@ -33,13 +34,17 @@ public class ItemController : MonoBehaviour
         switch (item)
         {
             case ItemType.Neighbor:
-                // TODO maybe add points?
+                FindObjectOfType<LevelController>().NeighborSaved();
                 break;
             case ItemType.Gun:
                 // TODO add new gun type to player
                 break;
             case ItemType.Health:
                 // TODO add health to player
+                break;
+            case ItemType.Door:
+                
+                FindObjectOfType<LevelController>().NextLevel();
                 break;
             default:
                 break;
