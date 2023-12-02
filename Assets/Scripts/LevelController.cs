@@ -92,4 +92,9 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene("Player_and_Enemy_Movement_Test");
         StartLevel();
     }
+
+    public void GoToMainMenue()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
