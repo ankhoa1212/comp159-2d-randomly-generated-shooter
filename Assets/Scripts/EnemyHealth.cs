@@ -96,11 +96,11 @@ public class EnemyHealth : MonoBehaviour
 
         if (weaponSwitcher != null)
         {
-            if (weaponSwitcher.currentWeapon == weaponSwitcher.rifle)
+            if (weaponSwitcher.getCurrentWeapon().CompareTag("Rifle"))
             {
                 return rifleAmmoBoxPrefab;
             }
-            else if (weaponSwitcher.currentWeapon == weaponSwitcher.shotgun)
+            else if (weaponSwitcher.getCurrentWeapon().CompareTag("Shotgun"))
             {
                 return shotgunAmmoBoxPrefab;
             }

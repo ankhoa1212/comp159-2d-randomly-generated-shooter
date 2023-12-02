@@ -10,6 +10,10 @@ TagManager:
   - Enemy
   - ShotGunBullet
   - Bullet
+  - Street
+  - StreetFiller
+  - Rifle
+  - Shotgun
   layers:
   - Default
   - TransparentFX
