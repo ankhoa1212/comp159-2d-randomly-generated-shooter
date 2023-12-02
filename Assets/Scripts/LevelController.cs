@@ -15,21 +15,14 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        healthScript = playerObject.GetComponent<PlayerHealth>();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        playerHealth = healthScript.getPlayerHealth();
-
-        if (playerHealth <= 0)
+        if (playerObject != null)
         {
-            GameOver();
+            playerTransform = playerObject.transform;
+            healthScript = playerObject.GetComponent<PlayerHealth>();
         }
     }
+
     // decrement number of neighbors left to be saved
     public void NeighborSaved()
     {
