@@ -9,7 +9,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject door;
     private int neighborsToSave;
     private Transform playerTransform;
-    private PlayerHealth healthScript;
     private int playerHealth;
 
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class LevelController : MonoBehaviour
         if (playerObject != null)
         {
             playerTransform = playerObject.transform;
-            healthScript = playerObject.GetComponent<PlayerHealth>();
         }
     }
 
@@ -39,10 +37,10 @@ public class LevelController : MonoBehaviour
     public void StartLevel()
     {
         neighborsToSave = 0;
-        StartCoroutine(nameof(GetNumberOfNeighbors));
+        StartCoroutine(nameof(LevelSetup));
     }
 
-    private IEnumerator GetNumberOfNeighbors()
+    private IEnumerator LevelSetup()
     {
         while (neighborsToSave == 0)
         {
@@ -55,6 +53,8 @@ public class LevelController : MonoBehaviour
             }
         }
         Debug.Log($"Number of neighbors to save: {neighborsToSave}");
+        var minimapIconController = FindObjectOfType<MinimapIconController>();
+        minimapIconController.ResizeMinimapIcons();
     }
 
     // initialize the next level

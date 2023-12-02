@@ -182,6 +182,7 @@ public class RoomController : MonoBehaviour
             makeTransparent.SetActive(false); // show room
             SetActiveInList(true, items); // show items
             SetActiveInList(true, enemies); // show enemies
+            FindObjectOfType<MinimapIconController>().ResizeMinimapIcons(); // resize minimap icons
         }
     }
     // hide room when player leaves
