@@ -10,6 +10,7 @@ public class WeaponSwitcher : MonoBehaviour
     [SerializeField] private List<GameObject> weapons;
     [SerializeField] private List<Sprite> weaponImage;
     [SerializeField] private Image weaponBoxImage;
+    private GameObject currentWeapon;
     void Start()
     {
         // Set the initial weapon index
@@ -48,11 +49,17 @@ public class WeaponSwitcher : MonoBehaviour
             {
                 weapons[x].SetActive(true);
                 weaponBoxImage.sprite = weaponImage[x]; // set weapon box image sprite
+                currentWeapon = weapons[x];
             }
             else
             {
                 weapons[x].SetActive(false);
             }
         }
+    }
+
+    public GameObject getCurrentWeapon()
+    {
+        return currentWeapon;
     }
 }

@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject door;
     private int neighborsToSave;
     private Transform playerTransform;
+    private PlayerHealth healthScript;
+    private int playerHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerTransform = playerObject.transform;
+            healthScript = playerObject.GetComponent<PlayerHealth>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     // decrement number of neighbors left to be saved
     public void NeighborSaved()
     {
@@ -81,6 +84,12 @@ public class LevelController : MonoBehaviour
     // trigger game over screen
     public void GameOver()
     {
-        
+        SceneManager.LoadScene("Game_Over");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Player_and_Enemy_Movement_Test");
+        StartLevel();
     }
 }

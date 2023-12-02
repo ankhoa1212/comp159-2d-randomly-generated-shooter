@@ -4,12 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Room
+  - Fence
+  - Neighbor
   - Enemy
+  - ShotGunBullet
+  - Bullet
   - Street
   - StreetFiller
-  - Bullet
-  - Neighbor
-  - Room
+  - Rifle
+  - Shotgun
   layers:
   - Default
   - TransparentFX

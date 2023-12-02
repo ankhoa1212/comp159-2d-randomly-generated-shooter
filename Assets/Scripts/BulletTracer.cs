@@ -29,7 +29,8 @@ public class Bullet : MonoBehaviour
         }
 
         // Prevents Bullet game objects from destroying themselves when colliding with one another
-        if (collision.gameObject.CompareTag("Bullet"))
+
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("ShotGunBullet"))
         {
             return;
         }

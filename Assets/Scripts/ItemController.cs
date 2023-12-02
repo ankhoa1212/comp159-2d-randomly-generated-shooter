@@ -13,6 +13,8 @@ public class ItemController : MonoBehaviour
         Neighbor,
         Gun,
         Health,
+        RifleAmmoBox,
+        shotgunAmmoBox,
         Door
     }
     // Start is called before the first frame update
@@ -45,6 +47,10 @@ public class ItemController : MonoBehaviour
             case ItemType.Door:
                 
                 FindObjectOfType<LevelController>().NextLevel();
+                break;
+            case ItemType.RifleAmmoBox:
+                break;
+            case ItemType.shotgunAmmoBox:
                 break;
             default:
                 break;

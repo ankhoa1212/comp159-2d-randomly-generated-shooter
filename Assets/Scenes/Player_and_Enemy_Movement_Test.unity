@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 86379402}
   m_Layer: 0
   m_Name: Rifle
-  m_TagString: Untagged
+  m_TagString: Rifle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,7 +397,6 @@ GameObject:
   - component: {fileID: 333456003}
   - component: {fileID: 333456005}
   - component: {fileID: 333456004}
-  - component: {fileID: 333456006}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -463,21 +462,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333456002}
   m_CullTransparentMesh: 1
---- !u!114 &333456006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333456002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons: []
-  weaponImage: []
-  weaponBoxImage: {fileID: 333456004}
 --- !u!1 &340549804
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +557,6 @@ GameObject:
   - component: {fileID: 784059231}
   - component: {fileID: 784059233}
   - component: {fileID: 784059232}
-  - component: {fileID: 784059234}
   m_Layer: 5
   m_Name: WeaponBoxPanel
   m_TagString: Untagged
@@ -638,21 +621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784059230}
   m_CullTransparentMesh: 1
---- !u!114 &784059234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784059230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons: []
-  weaponImage: []
-  weaponBoxImage: {fileID: 784059232}
 --- !u!1 &1066815226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1540,7 @@ GameObject:
   - component: {fileID: 1909433690}
   m_Layer: 0
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1590,7 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1365922512}
-  bulletPrefab: {fileID: 7483238868408495898, guid: c09297c59f152264699f1b1f00ea21f9, type: 3}
+  ShotgunPrefab: {fileID: 8949947558051504341, guid: 6e082d027d862034f8f810ebcaf437da, type: 3}
   numberOfBullets: 3
   shotgunShot: {fileID: 8300000, guid: 16c490ef15e8c044c9fd7a0a53f385d2, type: 3}
 --- !u!224 &1909433688

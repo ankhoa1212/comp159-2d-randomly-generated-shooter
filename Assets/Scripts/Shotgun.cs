@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shotgun : MonoBehaviour
 {
     public Transform shootingPoint;
-    public GameObject bulletPrefab;
+    public GameObject ShotgunPrefab;
     public int numberOfBullets = 3;
 
     AudioSource _source;
@@ -31,7 +31,7 @@ public class Shotgun : MonoBehaviour
         for (int i = 0; i < numberOfBullets; i++)
         {
             Quaternion bulletRotation = shootingPoint.rotation * Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
-            Instantiate(bulletPrefab, shootingPoint.position, bulletRotation);
+            Instantiate(ShotgunPrefab, shootingPoint.position, bulletRotation);
         }
     }
 }
