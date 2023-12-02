@@ -106,7 +106,6 @@ public class EnemyHealth : MonoBehaviour
             }
         }
         return null; 
-        Destroy(gameObject);
     }
 
 

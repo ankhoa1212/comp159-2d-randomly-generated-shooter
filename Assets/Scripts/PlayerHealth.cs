@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int playerHealth;
     [SerializeField] private int maxPlayerHealth;
     [SerializeField] private Color flashColor;
     [SerializeField] private Color regularColor;
@@ -27,18 +26,11 @@ public class PlayerHealth : MonoBehaviour
         currentPlayerHealth = maxPlayerHealth;
         _audioSource = GetComponent<AudioSource>();
     }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (!IsAlive())
-        {
-            Die();
-        }
-    }
 
     public void Die()
     {
-        Destroy(this.gameObject);
+        FindObjectOfType<LevelController>().GameOver();
+        Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
@@ -46,24 +38,15 @@ public class PlayerHealth : MonoBehaviour
         if (!isInvincible)
         {
             StartCoroutine(Invincible());
-
-            playerHealth -= damage;
             currentPlayerHealth -= damage;
             _audioSource.PlayOneShot(playerPain);
+            if (currentPlayerHealth <= 0)
+            {
+                Die();
+            }
         }
     }
     
-    public bool IsAlive()
-    {
-        if (playerHealth <= 0)
-        if (currentPlayerHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     private IEnumerator Invincible()
     {
         int temp = 0;
