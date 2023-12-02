@@ -475,12 +475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
+  weapons: []
+  weaponImage: []
   weaponBoxImage: {fileID: 333456004}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
 --- !u!1 &340549804
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,12 +650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
+  weapons: []
+  weaponImage: []
   weaponBoxImage: {fileID: 784059232}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
 --- !u!1 &1066815226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,12 +1089,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987f6aa5cb3060e4797205d4f2c43712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifle: {fileID: 86379398}
-  shotgun: {fileID: 1909433686}
-  currentWeapon: {fileID: 86379398}
-  weaponBoxImage: {fileID: 0}
-  rifleImg: {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
-  shotgunImg: {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
+  weapons:
+  - {fileID: 86379398}
+  - {fileID: 1909433686}
+  weaponImage:
+  - {fileID: 21300000, guid: ca056239f3ade0141a14fa8c8ae13cb9, type: 3}
+  - {fileID: 21300000, guid: 3f98818cef1f8834aa1a9842daba01dc, type: 3}
+  weaponBoxImage: {fileID: 784059232}
 --- !u!1 &1671403306
 GameObject:
   m_ObjectHideFlags: 0
