@@ -38,7 +38,7 @@ public class Shotgun : MonoBehaviour
     {
         for (int i = 0; i < 5; i++) 
         {
-            Instantiate(ShotgunPrefab, shootingPoint.position, Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
+            Instantiate(ShotgunPrefab, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
         }
     }
 }
