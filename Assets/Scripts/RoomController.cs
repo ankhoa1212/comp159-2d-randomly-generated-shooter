@@ -10,19 +10,22 @@ public class RoomController : MonoBehaviour
 {
     [SerializeField] private GameObject makeTransparent; // object that turns transparent when player enters
     [SerializeField] private Vector4 spawnArea; // spawn area (minX, maxX, minY, maxY)
-    [SerializeField] private List<GameObject> possibleEnemies; // enemy prefabs
-    [SerializeField] private List<GameObject> possibleItems;
+    [SerializeField] private List<GameObject> possibleEnemies; // possible enemy prefabs
+    [SerializeField] private List<GameObject> possibleItems; // possible item prefabs
     [SerializeField] private int numEnemies = 0; // number of enemies to spawn
     [SerializeField] private int numItems = 0; // number of items to spawn
     [SerializeField] private Transform entrance;
     [SerializeField] private float offsetFromEntrance = 1f;
     
-    private List<GameObject> enemies;
-    private List<GameObject> items;
+    private List<GameObject> enemies; // list of all enemies in the room
+    private List<GameObject> items; // list of all items in the room
+
+    private int numNeighbors; // number of neighbors in the room
     
     // Start is called before the first frame update
     void Start()
     {
+        numNeighbors = 0;
         spawnArea = RotateSpawnArea();
         enemies = new List<GameObject>();
         for (int i = 0; i < numEnemies; i++)
@@ -131,6 +134,10 @@ public class RoomController : MonoBehaviour
         }
         else
         {
+            if (obj.CompareTag("Neighbor"))
+            {
+                numNeighbors++;
+            }
             items.Add(spawnedObject);
         }
     }
@@ -159,6 +166,12 @@ public class RoomController : MonoBehaviour
             }
         }
         return true;
+    }
+
+    // return the number of neighbors in this room
+    public int GetNumberOfNeighbors()
+    {
+        return numNeighbors;
     }
 
     // show room when player enters

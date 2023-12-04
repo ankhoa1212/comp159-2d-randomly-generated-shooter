@@ -1,65 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    public GameObject rifle;
-    public GameObject shotgun;
-
-    public GameObject currentWeapon;
-
+    private int currentWeaponIndex;
+    [SerializeField] private List<GameObject> weapons;
+    [SerializeField] private List<Sprite> weaponImage;
+    [SerializeField] private Image weaponBoxImage;
+    private GameObject currentWeapon;
     void Start()
     {
-        // Set the initial weapon
-        SwitchToRifle();
+        // Set the initial weapon index
+        currentWeaponIndex = 0;
     }
 
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        // switch weapon based on scroll wheel value
+        SwitchWeapon(Input.GetAxis("Mouse ScrollWheel"));
+    }
+
+    // switch weapon based on direction scrolled
+    private void SwitchWeapon(float scrollValue)
+    {
+        if (scrollValue != 0f)
         {
-            SwitchToShotgun();
+            if (scrollValue > 0f)
+            {
+                currentWeaponIndex = Mathf.Clamp(currentWeaponIndex + 1, 0, weapons.Count - 1); // increase weapon index
+            }
+            else
+            {
+                currentWeaponIndex = Mathf.Clamp(currentWeaponIndex - 1, 0, weapons.Count - 1); // decrease weapon index
+            }
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        ActivateWeapon(currentWeaponIndex);
+    }
+
+    // activate weapon and set weapon image based on index, deactivate all other weapons
+    private void ActivateWeapon(int index)
+    {
+        for (var x = 0; x < weapons.Count; x++)
         {
-            SwitchToRifle();
+            if (x == index)
+            {
+                weapons[x].SetActive(true);
+                weaponBoxImage.sprite = weaponImage[x]; // set weapon box image sprite
+                currentWeapon = weapons[x];
+            }
+            else
+            {
+                weapons[x].SetActive(false);
+            }
         }
     }
 
-    void SwitchToRifle()
+    public GameObject getCurrentWeapon()
     {
-        if (shotgun != null)
-        {
-            shotgun.SetActive(false); // Deactivate the shotgun
-        }
-
-        if (rifle != null)
-        {
-            rifle.SetActive(true); // Activate the rifle
-            currentWeapon = rifle;
-        }
-        else
-        {
-            Debug.LogWarning("Rifle not assigned in the inspector!");
-        }
-    }
-
-    void SwitchToShotgun()
-    {
-        if (rifle != null)
-        {
-            rifle.SetActive(false); // Deactivate the rifle
-        }
-
-        if (shotgun != null)
-        {
-            shotgun.SetActive(true); // Activate the shotgun
-            currentWeapon = shotgun;
-        }
-        else
-        {
-            Debug.LogWarning("Shotgun not assigned in the inspector!");
-        }
+        return currentWeapon;
     }
 }

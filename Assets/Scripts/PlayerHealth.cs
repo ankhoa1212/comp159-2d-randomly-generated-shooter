@@ -11,26 +11,26 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     //[SerializeField] private Collider2D triggerCollider;
     [SerializeField] private SpriteRenderer playerSprite;
+
+    [SerializeField] private AudioClip playerPain;
+    [SerializeField] private AudioClip playerHealthIncrease;
+    
+    private AudioSource _audioSource;
     private int currentPlayerHealth;
     private bool isInvincible;
     // Start is called before the first frame update
     void Start()
     {
         isInvincible = false;
+
         currentPlayerHealth = maxPlayerHealth;
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (!IsAlive())
-        {
-            Die();
-        }
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void Die()
     {
-        Destroy(this.gameObject);
+        FindObjectOfType<LevelController>().GameOver();
+        Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
@@ -39,19 +39,14 @@ public class PlayerHealth : MonoBehaviour
         {
             StartCoroutine(Invincible());
             currentPlayerHealth -= damage;
+            _audioSource.PlayOneShot(playerPain);
+            if (currentPlayerHealth <= 0)
+            {
+                Die();
+            }
         }
     }
     
-    public bool IsAlive()
-    {
-        if (currentPlayerHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     private IEnumerator Invincible()
     {
         int temp = 0;
@@ -76,5 +71,15 @@ public class PlayerHealth : MonoBehaviour
     public int getMaxPlayerHealth()
     {
         return maxPlayerHealth;
+    }
+
+    public void IncreasePlayerHealth()
+    {
+        if (getPlayerHealth() < getMaxPlayerHealth())
+        {
+            currentPlayerHealth++;
+            _audioSource.PlayOneShot(playerHealthIncrease);
+        }
+
     }
 }

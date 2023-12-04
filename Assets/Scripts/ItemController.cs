@@ -12,7 +12,10 @@ public class ItemController : MonoBehaviour
     {
         Neighbor,
         Gun,
-        Health
+        Health,
+        RifleAmmoBox,
+        shotgunAmmoBox,
+        Door
     }
     // Start is called before the first frame update
     void Start()
@@ -33,17 +36,35 @@ public class ItemController : MonoBehaviour
         switch (item)
         {
             case ItemType.Neighbor:
-                // TODO maybe add points?
+                FindObjectOfType<LevelController>().NeighborSaved();
                 break;
             case ItemType.Gun:
                 // TODO add new gun type to player
                 break;
             case ItemType.Health:
-                // TODO add health to player
+                HealPlayer(other.gameObject);
+                break;
+            case ItemType.Door:
+                
+                FindObjectOfType<LevelController>().NextLevel();
+                break;
+            case ItemType.RifleAmmoBox:
+                break;
+            case ItemType.shotgunAmmoBox:
                 break;
             default:
                 break;
         }
         Destroy(gameObject);
+    }
+
+    // Function heals player when colliding with health pack and player health is less player max health
+    private void HealPlayer(GameObject player)
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth.getPlayerHealth() < playerHealth.getMaxPlayerHealth())
+        {
+            playerHealth.IncreasePlayerHealth();
+        }
     }
 }
