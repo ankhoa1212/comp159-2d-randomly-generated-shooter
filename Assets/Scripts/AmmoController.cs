@@ -22,30 +22,28 @@ public class AmmoController : MonoBehaviour
         ShowShotgunAmmo(); // Initial display
     }
 
-    public void DecreaseRifleAmmo()
+    public bool DecreaseRifleAmmo()
     {
         if (currentRifleAmmo > 0)
         {
             currentRifleAmmo--;
             ShowRifleAmmo();
+            
+            return true;
         }
-        else
-        {
-            Debug.Log("Out of Rifle Ammo!");
-        }
+        return false;
     }
 
-    public void DecreaseShotgunAmmo()
+    public bool DecreaseShotgunAmmo()
     {
         if (currentShotgunAmmo > 0)
         {
             currentShotgunAmmo--;
             ShowShotgunAmmo();
+            
+            return true;
         }
-        else
-        {
-            Debug.Log("Out of Shotgun Ammo!");
-        }
+        return false;
     }
 
     public void IncreaseAmmo(AmmoType ammoType, int amount)

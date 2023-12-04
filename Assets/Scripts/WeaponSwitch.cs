@@ -11,6 +11,13 @@ public class WeaponSwitcher : MonoBehaviour
     [SerializeField] private List<Sprite> weaponImage;
     [SerializeField] private Image weaponBoxImage;
     private GameObject currentWeapon;
+
+    private WeaponType Weapon;
+    public enum WeaponType
+    {
+        Rifle,
+        Shotgun
+    }
     void Start()
     {
         // Set the initial weapon index
@@ -50,10 +57,22 @@ public class WeaponSwitcher : MonoBehaviour
                 weapons[x].SetActive(true);
                 weaponBoxImage.sprite = weaponImage[x]; // set weapon box image sprite
                 currentWeapon = weapons[x];
+                Weapon = currentWeapon.WeaponType;
             }
             else
             {
                 weapons[x].SetActive(false);
+            }
+            switch(Weapon)
+            {
+                case WeaponType.Rifle:
+                FindObjectOfType<AmmoController>().ShowRifleAmmo();
+                break;
+                case WeaponType.Shotgun:
+                FindObjectOfType<AmmoController>().ShowShotgunAmmo();
+                break;
+                default:
+                break;
             }
         }
     }

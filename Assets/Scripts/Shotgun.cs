@@ -7,6 +7,7 @@ public class Shotgun : MonoBehaviour
     public Transform shootingPoint;
     public GameObject ShotgunPrefab;
     public int numberOfBullets = 3;
+    public WeaponType Weapon = WeaponType.Shotgun;
 
     AudioSource _source;
     [SerializeField] private AudioClip shotgunShot;
@@ -23,13 +24,9 @@ public class Shotgun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")) 
         {
+            if (ammoController.DecreaseShotgunAmmo()){
             Shoot();
             _source.Play();
-
-            // Update ammo count after shooting
-            if (ammoController != null)
-            {
-                ammoController.DecreaseShotgunAmmo();
             }
         }
     }

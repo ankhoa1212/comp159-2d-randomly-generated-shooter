@@ -7,6 +7,7 @@ public class Rifle : MonoBehaviour
     public Transform shootingPoint;
     public GameObject bulletPrefab;
     private AmmoController ammoController;
+    public WeaponType Weapon = WeaponType.Rifle;
 
     AudioSource _source;
     [SerializeField] private AudioClip rifleShot;
@@ -24,11 +25,9 @@ public class Rifle : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
-            _source.Play();
-            if (ammoController != null)
-            {
-                ammoController.DecreaseRifleAmmo();
+            if (ammoController.DecreaseRifleAmmo()){
+                Shoot();
+                _source.Play();
             }
         }
     }
