@@ -19,13 +19,9 @@ public class ItemController : MonoBehaviour
         Door
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-
-        AmmoController ammoController = other.GetComponent<AmmoController>();
-        if (ammoController != null)
-        {
             switch (item)
             {
                 case ItemType.Neighbor:
@@ -41,17 +37,17 @@ public class ItemController : MonoBehaviour
                     FindObjectOfType<LevelController>().NextLevel();
                     break;
                 case ItemType.RifleAmmoBox:
-                    ammoController.IncreaseAmmo(AmmoController.AmmoType.Rifle, 10); // Adjust the amount as needed
+                    FindObjectOfType<AmmoController>().IncreaseAmmo(AmmoController.AmmoType.Rifle, 10); 
                     break;
                 case ItemType.ShotgunAmmoBox:
-                    ammoController.IncreaseAmmo(AmmoController.AmmoType.Shotgun, 10); // Adjust the amount as needed
+                    FindObjectOfType<AmmoController>().IncreaseAmmo(AmmoController.AmmoType.Shotgun, 10); 
                     break;
                 default:
                     break;
             }
 
             Destroy(gameObject);
-        }
+        
     }
 
     void HealPlayer(GameObject player)
