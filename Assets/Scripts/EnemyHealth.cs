@@ -70,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
@@ -96,17 +96,16 @@ public class EnemyHealth : MonoBehaviour
 
         if (weaponSwitcher != null)
         {
-            if (weaponSwitcher.currentWeapon == weaponSwitcher.rifle)
+            if (weaponSwitcher.getCurrentWeapon().CompareTag("Rifle"))
             {
                 return rifleAmmoBoxPrefab;
             }
-            else if (weaponSwitcher.currentWeapon == weaponSwitcher.shotgun)
+            else if (weaponSwitcher.getCurrentWeapon().CompareTag("Shotgun"))
             {
                 return shotgunAmmoBoxPrefab;
             }
         }
         return null; 
-        Destroy(gameObject);
     }
 
 
