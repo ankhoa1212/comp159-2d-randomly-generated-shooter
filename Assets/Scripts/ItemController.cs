@@ -8,61 +8,56 @@ public class ItemController : MonoBehaviour
 {
     [SerializeField]
     private ItemType item;
+
     private enum ItemType
     {
         Neighbor,
         Gun,
         Health,
         RifleAmmoBox,
-        shotgunAmmoBox,
+        ShotgunAmmoBox,
         Door
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        // if player has touched item, have item act accordingly
-        switch (item)
+
+        AmmoController ammoController = other.GetComponent<AmmoController>();
+        if (ammoController != null)
         {
-            case ItemType.Neighbor:
-                FindObjectOfType<LevelController>().NeighborSaved();
-                break;
-            case ItemType.Gun:
-                // TODO add new gun type to player
-                break;
-            case ItemType.Health:
-                HealPlayer(other.gameObject);
-                break;
-            case ItemType.Door:
-                
-                FindObjectOfType<LevelController>().NextLevel();
-                break;
-            case ItemType.RifleAmmoBox:
-                break;
-            case ItemType.shotgunAmmoBox:
-                break;
-            default:
-                break;
+            switch (item)
+            {
+                case ItemType.Neighbor:
+                    FindObjectOfType<LevelController>().NeighborSaved();
+                    break;
+                case ItemType.Gun:
+                    // TODO: Add new gun type to player
+                    break;
+                case ItemType.Health:
+                    HealPlayer(other.gameObject);
+                    break;
+                case ItemType.Door:
+                    FindObjectOfType<LevelController>().NextLevel();
+                    break;
+                case ItemType.RifleAmmoBox:
+                    ammoController.IncreaseAmmo(AmmoController.AmmoType.Rifle, 10); // Adjust the amount as needed
+                    break;
+                case ItemType.ShotgunAmmoBox:
+                    ammoController.IncreaseAmmo(AmmoController.AmmoType.Shotgun, 10); // Adjust the amount as needed
+                    break;
+                default:
+                    break;
+            }
+
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
-    // Function heals player when colliding with health pack and player health is less player max health
-    private void HealPlayer(GameObject player)
+    void HealPlayer(GameObject player)
     {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        if (playerHealth.getPlayerHealth() < playerHealth.getMaxPlayerHealth())
+        if (playerHealth != null && playerHealth.getPlayerHealth() < playerHealth.getMaxPlayerHealth())
         {
             playerHealth.IncreasePlayerHealth();
         }

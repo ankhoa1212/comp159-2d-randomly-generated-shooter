@@ -10,28 +10,36 @@ public class Shotgun : MonoBehaviour
 
     AudioSource _source;
     [SerializeField] private AudioClip shotgunShot;
-    
+    private AmmoController ammoController;
     void Start()
     {
-        _source = this.GetComponent<AudioSource>();
+        _source = GetComponent<AudioSource>();
         _source.clip = shotgunShot;
+        ammoController = FindObjectOfType<AmmoController>();
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")) 
         {
             Shoot();
             _source.Play();
+
+            // Update ammo count after shooting
+            if (ammoController != null)
+            {
+                ammoController.DecreaseShotgunAmmo();
+            }
         }
     }
 
     void Shoot()
     {
-        for (int i = 0; i < numberOfBullets; i++)
+        for (int i = 0; i < 5; i++) 
         {
-            Quaternion bulletRotation = shootingPoint.rotation * Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
-            Instantiate(ShotgunPrefab, shootingPoint.position, bulletRotation);
+            Instantiate(ShotgunPrefab, shootingPoint.position, Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
         }
     }
 }
+
