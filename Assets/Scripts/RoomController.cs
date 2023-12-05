@@ -129,7 +129,7 @@ public class RoomController : MonoBehaviour
     {
         foreach (var item in items) // check if neighbor is still in room
         {
-            if (item.CompareTag("Neighbor"))
+            if (item != null && item.CompareTag("Neighbor"))
             {
                 return;
             }

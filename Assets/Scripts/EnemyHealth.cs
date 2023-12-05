@@ -6,9 +6,6 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField] private GameObject rifleAmmoBoxPrefab;
-    [SerializeField] private GameObject shotgunAmmoBoxPrefab;
-
     public delegate void deadCallback();
     public deadCallback OnDead;
 
@@ -91,24 +88,9 @@ public class EnemyHealth : MonoBehaviour
     */
     private GameObject GetAmmoBoxPrefab()
     {
-
-        WeaponSwitcher weaponSwitcher = FindObjectOfType<WeaponSwitcher>();
-
-        if (weaponSwitcher != null)
-        {
-            if (weaponSwitcher.getCurrentWeapon().CompareTag("Rifle"))
-            {
-                return rifleAmmoBoxPrefab;
-            }
-            else if (weaponSwitcher.getCurrentWeapon().CompareTag("Shotgun"))
-            {
-                return shotgunAmmoBoxPrefab;
-            }
-        }
-        return null; 
+        WeaponManager weaponManager = FindObjectOfType<WeaponManager>();
+        return weaponManager.GetCurrentWeapon().GetAmmoBox();
     }
-
-
 
     /*
     public bool IsAlive()

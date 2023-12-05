@@ -16,6 +16,7 @@ TagManager:
   - Shotgun
   - MinimapCamera
   - MinimapIcon
+  - ShootingPoint
   layers:
   - Default
   - TransparentFX

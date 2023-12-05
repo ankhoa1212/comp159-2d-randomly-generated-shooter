@@ -21,10 +21,7 @@ public class ItemController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (item == ItemType.Door)
-        {
-            FindObjectOfType<MinimapIconController>().ResizeMinimapIcons();
-        }
+        FindObjectOfType<MinimapIconController>().ResizeMinimapIcons();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -50,15 +47,27 @@ public class ItemController : MonoBehaviour
                 FindObjectOfType<LevelController>().NextLevel();
                 break;
             case ItemType.RifleAmmoBox:
-                FindObjectOfType<AmmoController>().IncreaseAmmo(AmmoController.AmmoType.Rifle, 10); 
+                IncreaseAmmo(Weapon.WeaponType.Rifle, 3);
                 break;
             case ItemType.ShotgunAmmoBox:
-                FindObjectOfType<AmmoController>().IncreaseAmmo(AmmoController.AmmoType.Shotgun, 10); 
+                IncreaseAmmo(Weapon.WeaponType.Shotgun, 10);
                 break;
             default:
                 break;
         }
         Destroy(gameObject); // destroy item
+    }
+
+    private void IncreaseAmmo(Weapon.WeaponType type, int amount)
+    {
+        WeaponManager weaponManager = FindObjectOfType<WeaponManager>();
+        Weapon weapon = FindObjectOfType<WeaponManager>().GetCurrentWeapon();
+        // if current weapon doesn't match ammo type, add ammo to another weapon of correct type
+        if (weapon.GetWeaponType() != type) 
+        {
+            weapon = weaponManager.GetWeaponOfType(type).GetComponent<Weapon>();
+        }
+        weapon.ChangeAmmo(amount);
     }
 
     void HealPlayer(GameObject player)

@@ -7,27 +7,30 @@ using UnityEngine.UI;
 public class WeaponSwitcher : MonoBehaviour
 {
     private int currentWeaponIndex;
+    [SerializeField] private List<GameObject> possibleWeapons;
     [SerializeField] private List<GameObject> weapons;
-    [SerializeField] private List<Sprite> weaponImage;
     [SerializeField] private Image weaponBoxImage;
-    private GameObject currentWeapon;
+    private Weapon currentWeapon;
+    private AmmoController ammoController;
 
-    private WeaponType Weapon;
-    public enum WeaponType
-    {
-        Rifle,
-        Shotgun
-    }
     void Start()
     {
         // Set the initial weapon index
         currentWeaponIndex = 0;
+        currentWeapon = weapons[0].GetComponent<Weapon>();
+        // Display the initial ammo amount
+        ammoController = FindObjectOfType<AmmoController>();
+        ammoController.DisplayAmmo(currentWeapon.GetCurrentAmmo(), currentWeapon.GetMaximumAmmo());
     }
 
     void Update()
     {
         // switch weapon based on scroll wheel value
         SwitchWeapon(Input.GetAxis("Mouse ScrollWheel"));
+        if (Input.GetButtonDown("Fire1"))
+        {
+            currentWeapon.FireWeapon();
+        }
     }
 
     // switch weapon based on direction scrolled
@@ -55,30 +58,19 @@ public class WeaponSwitcher : MonoBehaviour
             if (x == index)
             {
                 weapons[x].SetActive(true);
-                weaponBoxImage.sprite = weaponImage[x]; // set weapon box image sprite
-                currentWeapon = weapons[x];
-                Weapon = currentWeapon.WeaponType;
+                currentWeapon = weapons[x].GetComponent<Weapon>(); // set current weapon
+                weaponBoxImage.sprite = currentWeapon.GetWeaponImage(); // set weapon box image sprite
+                ammoController.DisplayAmmo(currentWeapon.GetCurrentAmmo(), currentWeapon.GetMaximumAmmo()); // show ammo
             }
             else
             {
                 weapons[x].SetActive(false);
             }
-            switch(Weapon)
-            {
-                case WeaponType.Rifle:
-                FindObjectOfType<AmmoController>().ShowRifleAmmo();
-                break;
-                case WeaponType.Shotgun:
-                FindObjectOfType<AmmoController>().ShowShotgunAmmo();
-                break;
-                default:
-                break;
-            }
         }
     }
 
-    public GameObject getCurrentWeapon()
+    public GameObject GetCurrentWeapon()
     {
-        return currentWeapon;
+        return currentWeapon.gameObject;
     }
 }
