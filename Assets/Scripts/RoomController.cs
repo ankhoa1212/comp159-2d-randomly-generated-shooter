@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class RoomController : MonoBehaviour
@@ -16,12 +17,12 @@ public class RoomController : MonoBehaviour
     [SerializeField] private int numItems = 0; // number of items to spawn
     [SerializeField] private Transform entrance;
     [SerializeField] private float offsetFromEntrance = 1f;
-    
+    [SerializeField] private Sprite allNeighborsSavedIcon;
     private List<GameObject> enemies; // list of all enemies in the room
     private List<GameObject> items; // list of all items in the room
 
     private int numNeighbors; // number of neighbors in the room
-    
+    private SpriteRenderer spriteToReplace; // sprite to replace with all neighbors saved icon
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,15 @@ public class RoomController : MonoBehaviour
         for (int i = 0; i < numItems; i++)
         {
             SpawnObject(RandomObjectInList(possibleItems));
+        }
+        
+        foreach (var testSprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (testSprite.gameObject.CompareTag("MinimapIcon"))
+            {
+                spriteToReplace = testSprite; // set icon to replace
+                break;
+            }
         }
         SetActiveInList(false, items);
     }
@@ -112,9 +122,32 @@ public class RoomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
+    // set minimap icon if all neighbors have been saved
+    private void AllNeighborsSaved()
+    {
+        foreach (var item in items) // check if neighbor is still in room
+        {
+            if (item.CompareTag("Neighbor"))
+            {
+                return;
+            }
+        }
+        spriteToReplace.sprite = allNeighborsSavedIcon;
+    }
+
+    // remove item from list and replace minimap icon if needed
+    public void RemoveItemFromList(GameObject obj)
+    {
+        if (obj != null)
+        {
+            items.Remove(obj);
+        }
+        AllNeighborsSaved(); // replace minimap icon if all neighbors have been saved
+    }
+    
+    
     private void SpawnObject(GameObject obj)
     {
         var randX = Random.Range(spawnArea[0], spawnArea[1]);

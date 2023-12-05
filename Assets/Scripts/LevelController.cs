@@ -54,6 +54,7 @@ public class LevelController : MonoBehaviour
         }
         Debug.Log($"Number of neighbors to save: {neighborsToSave}");
         var minimapIconController = FindObjectOfType<MinimapIconController>();
+        minimapIconController.SetMinimapCameraSize();
         minimapIconController.ResizeMinimapIcons();
     }
 
@@ -73,12 +74,14 @@ public class LevelController : MonoBehaviour
         layout.GenerateLevelLayout();
     }
     
-    // reset player position after amount of time
+    // deactivate player, reset player position, then reactivate player after certain amount of time
     public IEnumerator ResetPlayerPosition(float time)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.SetActive(false);
         yield return new WaitForSeconds(time);
         player.transform.position = Vector3.zero;
+        player.SetActive(true);
     }
 
     // trigger game over screen

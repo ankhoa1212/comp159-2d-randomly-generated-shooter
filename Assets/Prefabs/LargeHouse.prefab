@@ -108,6 +108,7 @@ MonoBehaviour:
   numItems: 2
   entrance: {fileID: 2333795770604050806}
   offsetFromEntrance: 10
+  allNeighborsSavedIcon: {fileID: 21300000, guid: 31b9626ca1a5d9f4b922940780ba560d, type: 3}
 --- !u!1 &2714941789889991305
 GameObject:
   m_ObjectHideFlags: 0
