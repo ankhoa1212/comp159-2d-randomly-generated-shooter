@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour
         animator.SetFloat("appearanceSpeed", 0.5f);
     }
 
-    private void OnDestroy()
+    public void OpenDoor()
     {
         Animator openDoorAnimator = openDoor.GetComponent<Animator>();
         GameObject openedDoor = Instantiate(openDoor, transform.position, Quaternion.identity);

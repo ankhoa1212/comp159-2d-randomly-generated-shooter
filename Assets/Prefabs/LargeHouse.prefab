@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 7124707512975174761, guid: 6947340facebd1f40a2b12ae98ea45c5, type: 3}
   possibleItems:
   - {fileID: 6375375938339443810, guid: 87aef358de06e8c46a0a686583a1b6c3, type: 3}
+  - {fileID: 6375375938339443810, guid: 87aef358de06e8c46a0a686583a1b6c3, type: 3}
+  - {fileID: 2371053259036216982, guid: caae43a749abe7c4697a67d5726d3ed4, type: 3}
   numEnemies: 5
   numItems: 3
   entrance: {fileID: 2333795770604050806}

@@ -44,6 +44,7 @@ public class ItemController : MonoBehaviour
                 HealPlayer(other.gameObject);
                 break;
             case ItemType.Door:
+                GetComponent<DoorController>().OpenDoor();
                 FindObjectOfType<LevelController>().NextLevel();
                 break;
             case ItemType.RifleAmmoBox:
