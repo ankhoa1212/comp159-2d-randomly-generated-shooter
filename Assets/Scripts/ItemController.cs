@@ -20,7 +20,10 @@ public class ItemController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (item == ItemType.Door)
+        {
+            FindObjectOfType<MinimapIconController>().ResizeMinimapIcons();
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +40,10 @@ public class ItemController : MonoBehaviour
         {
             case ItemType.Neighbor:
                 FindObjectOfType<LevelController>().NeighborSaved();
+                foreach (var roomController in FindObjectsOfType<RoomController>()) // check through all rooms
+                {
+                    roomController.RemoveItemFromList(gameObject); // remove item from item list if it exists
+                }
                 break;
             case ItemType.Gun:
                 // TODO add new gun type to player
@@ -45,7 +52,6 @@ public class ItemController : MonoBehaviour
                 HealPlayer(other.gameObject);
                 break;
             case ItemType.Door:
-                
                 FindObjectOfType<LevelController>().NextLevel();
                 break;
             case ItemType.RifleAmmoBox:
@@ -55,7 +61,7 @@ public class ItemController : MonoBehaviour
             default:
                 break;
         }
-        Destroy(gameObject);
+        Destroy(gameObject); // destroy item
     }
 
     // Function heals player when colliding with health pack and player health is less player max health
