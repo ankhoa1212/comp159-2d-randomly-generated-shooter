@@ -6,9 +6,6 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField] private GameObject rifleAmmoBoxPrefab;
-    [SerializeField] private GameObject shotgunAmmoBoxPrefab;
-
     public delegate void deadCallback();
     public deadCallback OnDead;
 
@@ -28,33 +25,40 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (!IsAlive())
-        {
-            Die();
-        }
-        */
-        
         if (enemyHealth <= 0)
         {
             Die();
         }
-        
     }
 
     public void Die()
     {
+        StartCoroutine(destroyAfterSound());
+        StartCoroutine(dropAmmo());
+    }
 
+    IEnumerator dropAmmo()
+    {
+        while (_sourceZombie.isPlaying)
+        {
+            yield return null;
+        }
         GameObject ammoBoxPrefab = GetAmmoBoxPrefab();
         if (ammoBoxPrefab != null)
         {
             Instantiate(ammoBoxPrefab, transform.position, Quaternion.identity);
         }
-        // Destroy the enemy GameObject
-        Destroy(gameObject);
-        //OnDead();
     }
-
+    
+    IEnumerator destroyAfterSound()
+    {
+        while (_sourceZombie.isPlaying)
+        {
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+    
     public void TakeDamage(int damage)
     {
         enemyHealth -= damage;
@@ -78,47 +82,9 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    /*
-    public bool IsAlive()
-    {
-        if (enemyHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-    */
     private GameObject GetAmmoBoxPrefab()
     {
-
-        WeaponSwitcher weaponSwitcher = FindObjectOfType<WeaponSwitcher>();
-
-        if (weaponSwitcher != null)
-        {
-            if (weaponSwitcher.getCurrentWeapon().CompareTag("Rifle"))
-            {
-                return rifleAmmoBoxPrefab;
-            }
-            else if (weaponSwitcher.getCurrentWeapon().CompareTag("Shotgun"))
-            {
-                return shotgunAmmoBoxPrefab;
-            }
-        }
-        return null; 
+        WeaponManager weaponManager = FindObjectOfType<WeaponManager>();
+        return weaponManager.GetCurrentWeapon().GetAmmoBox();
     }
-
-
-
-    /*
-    public bool IsAlive()
-    {
-        if (enemyHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-    */
 }

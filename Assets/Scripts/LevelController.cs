@@ -9,7 +9,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject door;
     private int neighborsToSave;
     private Transform playerTransform;
-    private PlayerHealth healthScript;
     private int playerHealth;
 
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class LevelController : MonoBehaviour
         if (playerObject != null)
         {
             playerTransform = playerObject.transform;
-            healthScript = playerObject.GetComponent<PlayerHealth>();
         }
     }
 
@@ -39,10 +37,10 @@ public class LevelController : MonoBehaviour
     public void StartLevel()
     {
         neighborsToSave = 0;
-        StartCoroutine(nameof(GetNumberOfNeighbors));
+        StartCoroutine(nameof(LevelSetup));
     }
 
-    private IEnumerator GetNumberOfNeighbors()
+    private IEnumerator LevelSetup()
     {
         while (neighborsToSave == 0)
         {
@@ -55,6 +53,9 @@ public class LevelController : MonoBehaviour
             }
         }
         Debug.Log($"Number of neighbors to save: {neighborsToSave}");
+        var minimapIconController = FindObjectOfType<MinimapIconController>();
+        minimapIconController.SetMinimapCameraSize();
+        minimapIconController.ResizeMinimapIcons();
     }
 
     // initialize the next level
@@ -73,12 +74,14 @@ public class LevelController : MonoBehaviour
         layout.GenerateLevelLayout();
     }
     
-    // reset player position after amount of time
+    // deactivate player, reset player position, then reactivate player after certain amount of time
     public IEnumerator ResetPlayerPosition(float time)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.SetActive(false);
         yield return new WaitForSeconds(time);
         player.transform.position = Vector3.zero;
+        player.SetActive(true);
     }
 
     // trigger game over screen
