@@ -275,12 +275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c847f66c31d9b4aa9835bbd1a1fc24b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifleAmmoBoxPrefab: {fileID: 4911166196119781581, guid: 12c924c333010764dac98a31cebecdef, type: 3}
-  shotgunAmmoBoxPrefab: {fileID: 2755433345867208279, guid: 62fe7f1112373cc40bc6453ce28dece0, type: 3}
   enemyHealth: 2
   enemyDamage: 1
   zombieInjured: {fileID: 8300000, guid: 499810930e6b95d409d3cdb502112c49, type: 3}
-  zombieDeath: {fileID: 8300000, guid: ef6bef0cf90f73e4fbeda3b752aa90a7, type: 3}
+  zombieDeath: {fileID: 8300000, guid: 8724115aaff608844a0b94969d570a35, type: 3}
 --- !u!82 &-8858511652666154826
 AudioSource:
   m_ObjectHideFlags: 0
