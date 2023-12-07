@@ -7,13 +7,16 @@ using UnityEngine.Rendering;
 public class MinimapIconController : MonoBehaviour
 {
     private Camera minimapCamera;
+    private bool minimapReady;
 
     [SerializeField] private float iconScale; // scaling icons based on camera size
     [SerializeField] private float miniMapCameraScale; // scaling minimap size based on level size
     // Start is called before the first frame update
     void Start()
     {
+        minimapReady = false;
         minimapCamera = GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>();
+        minimapReady = true;
     }
 
     // Update is called once per frame
@@ -36,14 +39,19 @@ public class MinimapIconController : MonoBehaviour
         ResizeMinimapIcons();
     }
 
-    public void ResizeMinimapIcons()
+    public bool ResizeMinimapIcons()
     {
-        var cameraSize = minimapCamera.orthographicSize;
-        GameObject[] icons = GameObject.FindGameObjectsWithTag("MinimapIcon");
-        foreach (var icon in icons)
+        if (minimapReady)
         {
-            var scale = cameraSize * iconScale;
-            icon.transform.localScale = new Vector3(scale, scale, scale);
+            var cameraSize = minimapCamera.orthographicSize;
+            GameObject[] icons = GameObject.FindGameObjectsWithTag("MinimapIcon");
+            foreach (var icon in icons)
+            {
+                var scale = cameraSize * iconScale;
+                icon.transform.localScale = new Vector3(scale, scale, scale);
+            }
         }
+
+        return minimapReady;
     }
 }
