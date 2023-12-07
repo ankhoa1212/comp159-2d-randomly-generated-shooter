@@ -4,49 +4,58 @@ using UnityEngine;
 
 public class OneTimeUseItem : MonoBehaviour
 {
-    [SerializeField] private GameObject barricade;
-    [SerializeField] private Transform SpawnBarricadePoint;
-    [SerializeField] private float barricadeTime;
-    private int numOfBarricades;
-    private GameObject barricadePlaced;
+    [SerializeField] private UseItemType useItemType;
+    public enum UseItemType
+    {
+        Barricade,
+        Landmine
+    }
+    [SerializeField] private GameObject useItemPrefab;
+    [SerializeField] private Transform useItemPoint;
+    [SerializeField] private Sprite useItemImage; //
+    [SerializeField] private GameObject pickupItem; // pickup item prefab that adds more uses of the item
+    private int numItemUses;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        numOfBarricades = 1;
+        numItemUses = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Pressing E will place down the barricade
-        if (Input.GetKeyDown(KeyCode.E))
+    }
+
+    public bool UseItem()
+    {
+        if (numItemUses > 0)
         {
-            StartCoroutine(BarricadeTimer());
+            switch (useItemType)
+            {
+                case UseItemType.Barricade:
+                    var placedGameObject = Instantiate(useItemPrefab, useItemPoint.position, useItemPoint.rotation);
+                    numItemUses--;
+                    Destroy(placedGameObject, 5);
+                    break;
+                case UseItemType.Landmine:
+                    Instantiate(useItemPrefab, useItemPoint.position, useItemPoint.rotation);
+                    numItemUses--;
+                    break;
+            }
+            return true;
         }
-        
+        return false;
+    }
+    
+    public Sprite GetUseItemImage()
+    {
+        return useItemImage;
     }
 
-    private void PlaceDownBarricade()
+    public int GetNumberOfUses()
     {
-        if (numOfBarricades > 0)
-        {
-            //Places down the barricade
-            Instantiate(barricade, SpawnBarricadePoint.position, SpawnBarricadePoint.rotation);
-            numOfBarricades--;
-            barricadePlaced = GameObject.FindGameObjectWithTag("Barricade");
-        }
-    }
-
-    private void DestroyBarricade()
-    {
-        Destroy(barricadePlaced);
-    }
-
-    private IEnumerator BarricadeTimer()
-    {
-        //Places the barricade, waits for x amount of seconds, and destroys the barricade
-        PlaceDownBarricade();
-        yield return new WaitForSeconds(barricadeTime);
-        DestroyBarricade();
+        return numItemUses;
     }
 }

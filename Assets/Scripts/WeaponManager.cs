@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private List<GameObject> playerWeapons; // player's current weapons
     [SerializeField] private Image weaponBoxImage;
     private Weapon currentWeapon;
-    private AmmoController ammoController;
+    private DisplayController display;
 
     void Start()
     {
@@ -17,8 +17,8 @@ public class WeaponManager : MonoBehaviour
         currentWeaponIndex = 0;
         currentWeapon = playerWeapons[0].GetComponent<Weapon>();
         // Display the initial ammo amount
-        ammoController = FindObjectOfType<AmmoController>();
-        ammoController.DisplayAmmo(currentWeapon.GetCurrentAmmo(), currentWeapon.GetMaximumAmmo());
+        display = GetComponent<DisplayController>();
+        DisplayAmmo();
     }
 
     void Update()
@@ -28,8 +28,13 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             currentWeapon.FireWeapon();
-            ammoController.DisplayAmmo(currentWeapon.GetCurrentAmmo(), currentWeapon.GetMaximumAmmo());
+            DisplayAmmo();
         }
+    }
+
+    private void DisplayAmmo()
+    {
+        display.SetText($"{currentWeapon.GetCurrentAmmo()}/{currentWeapon.GetMaximumAmmo()}");
     }
 
     // switch weapon based on direction scrolled
@@ -58,7 +63,7 @@ public class WeaponManager : MonoBehaviour
             {
                 currentWeapon = playerWeapons[x].GetComponent<Weapon>(); // set current weapon
                 weaponBoxImage.sprite = currentWeapon.GetWeaponImage(); // set weapon box image sprite
-                ammoController.DisplayAmmo(currentWeapon.GetCurrentAmmo(), currentWeapon.GetMaximumAmmo()); // show ammo of current weapon
+                DisplayAmmo();
                 break;
             }
         }
