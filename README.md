@@ -81,10 +81,12 @@ Logo was edited with GIMP and originally generated from [Looka](https://looka.co
 Shotgun audio was edited with Audacity and originally from [freesounds.org](https://freesound.org/people/JavierZumer/sounds/257234/)</br>
 Rifle audio was edited with Audacity and originally from [freesounds.org](https://freesound.org/people/coolabc/sounds/569174/)</br>
 Zombie audio was edited with Audacity and originally from [freesounds.org](https://freesound.org/people/alirabiei/sounds/491855/)</br>
-Player “Oof” sound originally from [freesounds.org](https://freesound.org/people/fotoshop/sounds/47356/)</br>
+Main menu music was edited with Audacity and originally from [freesounds.org](https://freesound.org/people/deadrobotmusic/sounds/570867/)</br>
 Health Increase sound was edited with Audacity and originally from [here](https://www.sounds-resource.com/game_boy_advance/advancewars/sound/8850/)</br>
-Landmine beeping audio was edited with Audacity and from [freesounds.org](https://freesound.org/people/PITCHEDsenses/sounds/488811/)</br>
+Landmine beeping audio was edited with Audacity and originally from [freesounds.org](https://freesound.org/people/PITCHEDsenses/sounds/488811/)</br>
 Explosion audio was from [freesounds.org](https://freesound.org/people/derplayer/sounds/587190/)</br>
+Player “Oof” sound was from [freesounds.org](https://freesound.org/people/fotoshop/sounds/47356/)</br>
+
 
 **Sprites Assets**:</br>
 Items & Weapons Sprite Sheet was edited with GIMP and originally from [here](https://www.spriters-resource.com/fullview/153551/)</br>
