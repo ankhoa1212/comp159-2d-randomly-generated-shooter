@@ -9,12 +9,14 @@ public class LandMine : MonoBehaviour
     [SerializeField] private AudioClip landmineBeeps;
     [SerializeField] private AudioClip explosion;
 
-    [SerializeField] private GameObject damageRadius;
     [SerializeField] private int damage = 2;
+
+    [SerializeField] private GameObject explosionPrefab;
 
     private bool isBeeping;
     
-    private List<Collider2D> collidersInRadius = new List<Collider2D>();
+    // This adjusts the size of the radius of any game object that will receive damage once a landmine is triggered 
+    public float damageRadius;
     
     private GameObject playerObject;
     private GameObject[] enemyObjects;
@@ -27,7 +29,7 @@ public class LandMine : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         isBeeping = false;
-        damageRadius.SetActive(false);
+        //damageRadius.SetActive(false);
         
         // Grabbing player game object for the PlayerHealth script
         playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -49,21 +51,11 @@ public class LandMine : MonoBehaviour
         // Only player and enemy game objects trigger landmine audio
         if (!isBeeping && (other.CompareTag("Player") || other.CompareTag("Enemy")))
         {
-            damageRadius.SetActive(true);
-            collidersInRadius.Add(other);
             // Play the landmine beeping audio before explosion audio
             isBeeping = true;
             _audioSource.PlayOneShot(landmineBeeps);
             StartCoroutine(waitForBeeps(other));
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        // Remove collider from the list when it exits the damage radius
-        if (collidersInRadius.Contains(other))
-        {
-            collidersInRadius.Remove(other);
+
         }
     }
     
@@ -79,31 +71,42 @@ public class LandMine : MonoBehaviour
         {
             _audioSource.PlayOneShot(explosion);
         }
-        
+
+        Vector2 landminePosition = gameObject.transform.position;
         // Calls for the landmine's damage function
         DealDamageInRadius();
         
         // Wait until the game objects within the damage radius are damaged and then destroy the landmine
         yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
+        GameObject explosionObject = Instantiate(explosionPrefab, landminePosition, Quaternion.identity);
+        Animator explodeAnimator = explosionObject.GetComponent<Animator>();
+        float explosionDuration = explodeAnimator.runtimeAnimatorController.animationClips[0].length;
+        Destroy(explosionObject, explosionDuration);
     }
     
     // Function deals damage to all the Player and Enemy game objects if they're within the landmine's damage radius
     void DealDamageInRadius()
     {
-        foreach (Collider2D collider in collidersInRadius)
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, damageRadius);
+        foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("Player") && _playerHealth != null)
+            if (collider.CompareTag("Player") && (collider.TryGetComponent(out _playerHealth)))
             {
                 _playerHealth.TakeDamage(damage);
-                //Debug.Log("PLAYER TOOK " + damage + " DAMAGE!!!");
             }
 
-            if (collider.CompareTag("Enemy") && _enemyHealth != null)
+            if (collider.CompareTag("Enemy") && (collider.TryGetComponent(out _enemyHealth)))
             {
                 _enemyHealth.TakeDamage(damage);
-                //Debug.Log("ENEMY TOOK " + damage + " DAMAGE!!!");
             }
         }
+    }
+    
+    // Draws a circle in the scene view to see the damage radius
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, this.damageRadius);
     }
 }
