@@ -25,33 +25,40 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (!IsAlive())
-        {
-            Die();
-        }
-        */
-        
         if (enemyHealth <= 0)
         {
             Die();
         }
-        
     }
 
     public void Die()
     {
+        StartCoroutine(destroyAfterSound());
+        StartCoroutine(dropAmmo());
+    }
 
+    IEnumerator dropAmmo()
+    {
+        while (_sourceZombie.isPlaying)
+        {
+            yield return null;
+        }
         GameObject ammoBoxPrefab = GetAmmoBoxPrefab();
         if (ammoBoxPrefab != null)
         {
             Instantiate(ammoBoxPrefab, transform.position, Quaternion.identity);
         }
-        // Destroy the enemy GameObject
-        Destroy(gameObject);
-        //OnDead();
     }
-
+    
+    IEnumerator destroyAfterSound()
+    {
+        while (_sourceZombie.isPlaying)
+        {
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+    
     public void TakeDamage(int damage)
     {
         enemyHealth -= damage;
@@ -75,32 +82,9 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    /*
-    public bool IsAlive()
-    {
-        if (enemyHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-    */
     private GameObject GetAmmoBoxPrefab()
     {
         WeaponManager weaponManager = FindObjectOfType<WeaponManager>();
         return weaponManager.GetCurrentWeapon().GetAmmoBox();
     }
-
-    /*
-    public bool IsAlive()
-    {
-        if (enemyHealth <= 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-    */
 }
