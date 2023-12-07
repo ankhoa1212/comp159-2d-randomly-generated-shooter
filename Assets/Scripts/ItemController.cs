@@ -21,7 +21,10 @@ public class ItemController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<MinimapIconController>().ResizeMinimapIcons();
+        var minimapController = FindObjectOfType<MinimapIconController>();
+        while (!minimapController.ResizeMinimapIcons())
+        {
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
