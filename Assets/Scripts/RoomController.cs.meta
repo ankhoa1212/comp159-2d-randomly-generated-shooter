@@ -3,7 +3,10 @@ guid: cbb1d0961e850e249b1a4d2249920cd2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - makeTransparent: {instanceID: 0}
+  - entrance: {instanceID: 0}
+  - allNeighborsSavedIcon: {fileID: 21300000, guid: 31b9626ca1a5d9f4b922940780ba560d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
