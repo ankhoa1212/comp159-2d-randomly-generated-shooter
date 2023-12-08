@@ -2183,7 +2183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  cam: {fileID: 0}
 --- !u!50 &1808008384
 Rigidbody2D:
   serializedVersion: 4
