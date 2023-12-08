@@ -19,13 +19,16 @@ public class WalkingSpriteController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-        changingSprite = false;
+        Initialize();
     }
 
     // for when player is disabled/enabled again during next level transition
     private void OnEnable()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -47,7 +50,10 @@ public class WalkingSpriteController : MonoBehaviour
         {
             changingSprite = true;
             yield return new WaitForSeconds(spriteTransitionDelay);
-            spriteRenderer.sprite = sprites[index];
+            if (index < sprites.Count)
+            {
+                spriteRenderer.sprite = sprites[index];
+            }
             IncrementIndex(sprites.Count);
             changingSprite = false;
         }
@@ -84,5 +90,48 @@ public class WalkingSpriteController : MonoBehaviour
                 StartCoroutine(AdjustSprite(backwardsSprites));
             }
         }
+    }
+
+    // size of inputs should be divisible by 4
+    public void SetAllSprites(List<Sprite> inputs)
+    {
+        var i = 0;
+        var size = inputs.Count / 4;
+        SetBackwardsSprites(AddSpriteInputs(inputs, i, size));
+        i += size;
+        SetLeftSprites(AddSpriteInputs(inputs, i, size));
+        i += size;
+        SetRightSprites(AddSpriteInputs(inputs, i, size));
+        i += size;
+        SetForwardsSprites(AddSpriteInputs(inputs, i, size));
+        Initialize();
+    }
+
+    private static List<Sprite> AddSpriteInputs(List<Sprite> inputs, int index, int size)
+    {
+        List<Sprite> spriteInputs = new List<Sprite>();
+        for (int x = index; x < index + size; x++)
+        {
+            spriteInputs.Add(inputs[x]);
+        }
+
+        return spriteInputs;
+    }
+
+    private void SetBackwardsSprites(List<Sprite> inputs)
+    {
+        backwardsSprites = inputs;
+    }
+    private void SetLeftSprites(List<Sprite> inputs)
+    {
+        leftSprites = inputs;
+    }
+    private void SetRightSprites(List<Sprite> inputs)
+    {
+        rightSprites = inputs;
+    }
+    private void SetForwardsSprites(List<Sprite> inputs)
+    {
+        forwardsSprites = inputs;
     }
 }

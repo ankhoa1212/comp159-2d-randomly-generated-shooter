@@ -7,11 +7,13 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float enemySpeed;
     private GameObject player;
+    private Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -19,8 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, 
-                player.transform.position, enemySpeed * Time.deltaTime);
+            rb.velocity = enemySpeed * (player.transform.position - transform.position).normalized;
         }
     }
 }
