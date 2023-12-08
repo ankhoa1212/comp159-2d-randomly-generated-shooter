@@ -25,6 +25,7 @@ public class LayoutController : MonoBehaviour
     private Vector2 lastPosition; // last position of street object placed
     private string lastDirection; // last direction of street object placed
     private bool loop = true; // to reset generating street layout if a street loop is found
+    private Vector4 levelBounds; // bounds of the entire level
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +85,7 @@ public class LayoutController : MonoBehaviour
         bounds.y += outerFenceOffset;
         bounds.z -= outerFenceOffset;
         bounds.w += outerFenceOffset;
+        levelBounds = bounds;
         for (var x = bounds.x; x < bounds.y; x += fenceOffset)
         {
             fences.Add(Instantiate(fence, new Vector3(x, bounds.z, 0), Quaternion.identity));
@@ -325,6 +327,11 @@ public class LayoutController : MonoBehaviour
             Destroy(obj);
         }
         return new List<GameObject>();
+    }
+
+    public Vector4 GetLevelBounds()
+    {
+        return levelBounds;
     }
     
     // clear all objects in level
