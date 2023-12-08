@@ -40,6 +40,11 @@ public class LevelController : MonoBehaviour
         StartCoroutine(nameof(LevelSetup));
     }
 
+    public int GetNeighborNum()
+    {
+        return neighborsToSave;
+    }
+    
     private IEnumerator LevelSetup()
     {
         while (neighborsToSave == 0)
