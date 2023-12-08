@@ -10,7 +10,9 @@ public class LevelController : MonoBehaviour
     private int neighborsToSave;
     private Transform playerTransform;
     private int playerHealth;
-
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip yippee;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,15 @@ public class LevelController : MonoBehaviour
         {
             playerTransform = playerObject.transform;
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // decrement number of neighbors left to be saved
     public void NeighborSaved()
     {
         neighborsToSave--;
+        _audioSource.PlayOneShot(yippee);
         if (neighborsToSave == 0)
         {
             var doorPosition = playerTransform.position;
