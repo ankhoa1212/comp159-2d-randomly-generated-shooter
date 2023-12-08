@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="63224a62-4488-4717-aa1d-b7f5d471fd92" name="Changes" comment="" />
+    <list default="true" id="63224a62-4488-4717-aa1d-b7f5d471fd92" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Audio/Loop_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/Loop_Battle.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/MainMenu.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/MainMenu.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/NextLevelDoorOpen.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/NextLevelDoorOpen.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/yippee.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Audio/yippee.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/AWSD-keys-edited.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/computer-mouse-edited.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/keyboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BattleMusic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BattleMusic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainMenuAudio.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainMenuAudio.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/10.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/11.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/16.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/17.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/24.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/25.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/8.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/9.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/14.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/15.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/18.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/20.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/7.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ZombieSpriteController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ZombieSpriteController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/EnemyTriangle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/EnemyTriangle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Controls.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Controls.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Player_and_Enemy_Movement_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Player_and_Enemy_Movement_Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DoorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomSpriteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RandomSpriteController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WalkingSpriteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WalkingSpriteController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/AWSD-keys-edited.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/computer-mouse-edited.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/keyboard.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/13.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/24.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/25.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Enemy Sprites/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Patreon sprites 1/9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,11 +89,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/NeighborCount.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../NeighborCount.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LevelController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MinimapIconController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/RoomController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WeaponManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Z68Ke68cPXd3vbljEMOh4fxJrz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,7 +108,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Neighbor-Count",
+    "git-widget-placeholder": "Merging Neighbor-Count",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -46,6 +132,10 @@
       <option name="presentableId" value="Default" />
       <updated>1701731109808</updated>
       <workItem from="1701731115248" duration="18000" />
+      <workItem from="1701983516833" duration="138000" />
+      <workItem from="1702015069657" duration="30000" />
+      <workItem from="1702015644860" duration="663000" />
+      <workItem from="1702016514395" duration="3573000" />
     </task>
     <servers />
   </component>
