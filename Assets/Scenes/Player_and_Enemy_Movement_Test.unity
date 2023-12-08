@@ -289,7 +289,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c178683f147bd84ba31d8fc7e4855c2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -816,7 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be775893b889ef47b9ee3d4259e9979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObject: {fileID: 0}
 --- !u!114 &546674511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,5 +3127,4 @@ SceneRoots:
   - {fileID: 1671403310}
   - {fileID: 1066815229}
   - {fileID: 1111846564}
-  - {fileID: 1348924052}
   - {fileID: 252258679}
