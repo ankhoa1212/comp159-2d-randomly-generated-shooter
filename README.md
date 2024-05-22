@@ -15,8 +15,8 @@ Programmers: Leah Hernandez, Zihao Yu, Matthew Maragos
 
 
 ## Overview
-Made with Unity, Where Are My Neighbors? is an endless 2D run-and-gun shooter inspired by the Super Nintendo Entertainment System. 
-The game has the player navigate through each level to find their neighbors while shooting through zombies. As the level progression increases, the number of neighbors and zombies also increases. </br>
+Made with Unity, Where Are My Neighbors? is an endless 2D run-and-gun shooter inspired by the Super Nintendo Entertainment System title, Zombies Ate My Neighbors. 
+The game has the player navigate through each level to find their neighbors while shooting through zombies. Once all the neighbors in a level have been obtained, a door will appear for the player to advance to the next level. As the level progression increases, the number of neighbors and zombies also increases. </br>
 
 ## How to Play
 ### Controls:
