@@ -1,11 +1,11 @@
 # Where Are My Neighbors?
 <p align=center>
- <img src ="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/b763d589-70c7-4f59-96f6-c3e277855b84" width = 50%> 
+ <img src ="https://github.com/user-attachments/assets/9a3279a2-441e-4d5a-8040-24a20a8b57c7" width = 50%> 
 </p>
 
 <h3 align=center><b>Created by</b></h3> 
 <p align=center>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/b3ad6fa0-2243-423f-8916-e73cbd423a18">
+<img src="https://github.com/user-attachments/assets/171a7d16-431f-4ff4-908d-933f94f32d30">
 </p>
 <p align=center>
 Project Manager: David Yang </br>
@@ -74,9 +74,9 @@ Total Complexity = 101</br>
 ## Features
 
 <p align=center><b>Weapon Switching</b></p>
-<p align=center>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/ce408f02-5d2a-42b8-8929-7682d71b3775" width = 20%>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/77da9110-3454-4e38-b726-01682186074c" width = 20%>
+<p align=center>!
+<img src="https://github.com/user-attachments/assets/c31e8383-01c0-48d9-b79b-666658252130" width = 20%>
+<img src="https://github.com/user-attachments/assets/cccd083e-ebcc-4f82-ad15-9f50d0edfba5" width = 20%>
 </p>
 <p align=center>
  Image above showcases the ability for players to alternate between their weapons
@@ -84,8 +84,8 @@ Total Complexity = 101</br>
 
 <p align=center><b>Guaranteed Ammo Drop</b></p>
 <p align=center>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/75d683d6-317c-4429-99ab-5e4636093028" width = 20%>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/bbffc31a-7580-429c-ab61-4184a89a7793" width = 20%>
+<img src="https://github.com/user-attachments/assets/8529f6be-dd3a-480e-be33-50ffe2b5059f" width = 20%>
+<img src="https://github.com/user-attachments/assets/864009fb-841c-48e6-a56c-de0de251cfb0" width = 20%>
 </p>
 <p align=center>
  Image above showcases destroying an zombie with a specific weapon, yields ammunition of weapon type that destroyed the zombie
@@ -93,8 +93,8 @@ Total Complexity = 101</br>
 
 <p align=center><b>Level Progression</b></p>
 <p align=center>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/27a39e3b-10ae-4dcb-93d1-a431cbd82aad" width = 20%>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/8ebc0799-9fdc-4d26-82bd-4f3c689b210b" width = 20%>
+<img src="https://github.com/user-attachments/assets/5420dce8-793f-4d8f-8553-242dd0fe052e" width = 20%>
+<img src="https://github.com/user-attachments/assets/858eebae-2c57-4703-9a5b-f0d45beec486" width = 20%>
 </p>
 <p align=center>
  Image above showcases the collection of the final neighbor to save instantiates a door to advance to the next level.
@@ -102,9 +102,9 @@ Total Complexity = 101</br>
 
 <p align=center><b>Mini-Map</b></p>
 <p align=center>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/35c4fa8a-2fdc-4a61-8752-35d97d0a0961" width = 30%>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/0b802d7e-f7fb-4662-82d7-98328a8e4b25" width = 30%>
-<img src="https://github.com/comp159/final-project-2d-2023-gobbledygook-games/assets/127431288/bbb80e33-f2b4-4273-b366-06839ee26c43" width = 30%>
+<img src="https://github.com/user-attachments/assets/a33a2559-c33d-40ae-9065-7e8060eea58d" width = 30%>
+<img src="https://github.com/user-attachments/assets/9848c866-d542-44ab-991a-784a2e10a586" width = 30%>
+<img src="https://github.com/user-attachments/assets/4a837484-aa25-470d-bc64-ac3375ff1f1d" width = 30%>
 </p>
 <p align=center>
  Image above showcases the mini-map that displays building the player has yet to enter and updates it, along with where neighbors are within buildings.
