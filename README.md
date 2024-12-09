@@ -28,7 +28,7 @@ The game has the player navigate through each level to find their neighbors whil
 * Aim:
   * Users use the mouse and its left-click button to point and shoot at the enemies on-screen.
 * WebGL link:
-  * [PLAY THE GAME!!!](https://comp159.github.io/final-project-2d-2023-gobbledygook-games/)
+  * [PLAY THE GAME!!!](https://ankhoa1212.github.io/comp159-2d-randomly-generated-shooter/)
 
 ## Propose to Complete
 **Sprint 1 Stories with Complexity Score**</br>
